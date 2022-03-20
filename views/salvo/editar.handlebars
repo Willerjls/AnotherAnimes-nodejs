@@ -1,0 +1,61 @@
+<main class="container adccont">
+  <form class="adicionar" action="/salvo/salvos/edit" method="POST">
+  <input type="hidden" name="id" value="{{salvo._id}}">
+    <h2> Vamos atualizar</h2>
+
+    {{#each erros}}
+      <div class="alert alert-danger">
+        {{texto}}
+      </div>
+    {{else}}
+
+    {{/each}}
+
+    <div class="adcimg">
+      <label class="labelInput">Adicione a imagem
+        <input
+          type="file"
+          name="imagem"
+          class="btn file_customizada"
+          accept="image/png, image/jpeg"
+            value="{{salvo.imagem}}"
+          multiple
+        />
+      </label>
+    </div>
+    <div class="enter">
+      <div class="inputs">
+        <input
+          class="inputtitle"
+          type="text"
+          name="titulo"
+          placeholder="Titulo"
+            value="{{salvo.titulo}}"
+        />
+      </div>
+      <div class="tmp">
+        <input
+          class="temp"
+          type="text"
+          name="temporada"
+          placeholder="Temporada"
+            value="{{salvo.temporada}}"
+        />
+        <input
+          class="ep"
+          type="number"
+          name="episodio"
+          placeholder="Episódio"
+            value="{{salvo.episodio}}"
+        />
+      </div>
+    </div>
+    <div class="teste">
+      <button
+        style="border-radius: 22px;"
+        type="submit"
+        class="btn borda"
+      >Salvar</button>
+    </div>
+  </form>
+</main>
