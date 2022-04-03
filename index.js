@@ -11,8 +11,6 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 const db = require("./config/db");
-
-
 require("./models/Usuario");
 require("./models/Salvo")
 require("./config/auth")(passport);

@@ -19,7 +19,7 @@ router.get("/salvos", logado, (req, res) => {
 });
 
 router.get("/adicionar", logado, (req, res) => {
-  Usuario.find()
+  Usuario.findOne({id: req.authInfo})
     .then((usuario) => {
       res.render("salvo/adicionar", { usuario: usuario });
     })
@@ -30,8 +30,9 @@ router.get("/adicionar", logado, (req, res) => {
 });
 
 router.post("/adicionar/add", logado, (req, res) => {
+  ;
   const novoAnime = {
-    usuario: req.body.usuario,
+    usuario: req.params.usuario,
     titulo: req.body.titulo,
     temporada: req.body.temporada,
     episodio: req.body.episodio,
