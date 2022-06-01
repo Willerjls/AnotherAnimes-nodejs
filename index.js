@@ -10,7 +10,6 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
-const db = require("./config/db");
 require("./models/Usuario");
 require("./models/Salvo")
 require("./config/auth")(passport);
@@ -64,7 +63,9 @@ app.set("views", "./views");
 // Mongoose
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(db.mongoURI)
+  .connect(
+    "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net/?retryWrites=true&w=majority"
+  )
   .then(() => {
     console.log("Banco de dados conectado");
   })
@@ -76,8 +77,6 @@ mongoose
 app.use(express.static(path.join(__dirname, "public")));
 
 // Rotas acessiveis gerais
-
-
 
 app.use("/usuario", usuario);
 app.use("/salvo", salvo);
@@ -96,3 +95,5 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("O seu servidor esta rodando!!! :)");
 });
+
+

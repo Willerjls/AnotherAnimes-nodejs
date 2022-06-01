@@ -8,7 +8,7 @@ const { logado } = require("../helpers/logado");
 const router = express.Router();
 
 // Rotas
-router.get("/salvos", logado, (req, res) => {
+router.get("/salvos", logado, async (req, res) => {
   Salvo.find()
     .then((salvos) => {
       res.render("salvo/salvos", { salvos: salvos });
