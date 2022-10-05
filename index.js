@@ -11,7 +11,7 @@ const session = require("express-session");
 const flash = require("connect-flash");
 const passport = require("passport");
 require("./models/Usuario");
-require("./models/Salvo")
+require("./models/Salvo");
 require("./config/auth")(passport);
 
 // ===== Configurações =====
@@ -66,6 +66,7 @@ mongoose
   .connect(
     "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net/?retryWrites=true&w=majority"
   )
+
   .then(() => {
     console.log("Banco de dados conectado");
   })
@@ -95,5 +96,3 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("O seu servidor esta rodando!!! :)");
 });
-
-
