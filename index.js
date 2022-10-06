@@ -62,11 +62,11 @@ app.set("views", "./views");
 
 // Mongoose
 mongoose.Promise = global.Promise;
+
 mongoose
-  .connect(
+  .connect(MONGODB_URI =
     "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net/?retryWrites=true&w=majority"
   )
-
   .then(() => {
     console.log("Banco de dados conectado");
   })
@@ -96,3 +96,5 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log("O seu servidor esta rodando!!! :)");
 });
+
+const uri = process.env.MONGODB_URI;
