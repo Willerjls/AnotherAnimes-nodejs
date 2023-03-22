@@ -1,21 +1,37 @@
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+body{
+    font-family: 'Nunito', sans-serif !important;
 }
 
 header {
     background: #2E2759;
 }
 
+p{
+    font-weight: bolder;
+}
+
+/* login */
+.btnlogin{
+    background-color: #2E2759 !important;
+    color: #FFF !important;
+    font-weight: bold;
+    border-radius: 22px !important;
+
+}
+
+.form-login{
+    width: 360px !important;
+}
 .menu {
-    font-family: 'Staatliches', cursive;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     align-self: center;
     list-style: none;
     height: 112px;
+}
+.alerta{
+background-color: transparent !important;
 }
 
 .dropdown {
@@ -24,6 +40,7 @@ header {
 
 .menu a {
     color: #ffff;
+    font-weight: bold;
 }
 
 .menu a:hover {
@@ -33,12 +50,19 @@ header {
 .btn {
     width: 137px;
     height: 44px;
+
 }
 
-.formcont>h2, .cont>h2, .adicionar>h2 {
+.form-control{
+    font-weight: bold !important;
+}
+
+.formcont>h2,
+.cont>h2,
+.adicionar>h2 {
     text-align: center;
     color: #2e2759;
-    font-family: 'Staatliches', cursive;
+
 }
 
 .adicionar>h2 {
@@ -62,7 +86,8 @@ header {
 
 .textsoc {
     text-align: center;
-    font-family: 'Roboto', sans-serif
+    font-weight: bold;
+
 }
 
 .textsoc>a>img {
@@ -76,12 +101,13 @@ header {
 }
 
 .btncont {
-    background: #2e2759;
+    background-color: #2E2759 !important;
     float: right;
-    color: #fff;
-    font-family: 'Staatliches', cursive;
+    color: #fff !important;
     margin: 19px 26% auto;
+
 }
+
 
 .contato {
     margin: 88px auto;
@@ -101,7 +127,7 @@ header {
 .bannersav {
     background-image: url('../img/salve-ep-bg.jpg');
     background-size: auto;
-    font-family: 'Staatliches', cursive;
+
     width: 100%;
     height: 161px;
 }
@@ -109,7 +135,7 @@ header {
 .bannerpag {
     background-image: url('../img/contato-bg.jpg');
     background-size: auto;
-    font-family: 'Staatliches', cursive;
+
     width: 100%;
     height: 161px;
 }
@@ -121,7 +147,7 @@ header {
 .banner3 {
     background-image: url('../img/salve-ep-bg.jpg');
     background-size: auto;
-    font-family: 'Staatliches', cursive;
+
     width: 100%;
     height: 161px;
 }
@@ -141,7 +167,7 @@ header {
 }
 
 .title {
-    font-family: 'Staatliches', cursive;
+
     color: #2e2759;
 }
 
@@ -177,7 +203,7 @@ header {
 
 .procurar {
     background: #2e2759;
-    font-family: 'Staatliches', cursive;
+
     height: 46px;
 }
 
@@ -210,12 +236,12 @@ header {
 
 .titulo {
     color: #2e2759;
-    font-family: 'Staatliches', cursive;
+  
 }
 
 .edits>a {
     border-radius: 22px 22px 22px 22px;
-    font-family: 'Staatliches', cursive;
+
 }
 
 footer {
@@ -223,7 +249,7 @@ footer {
     color: #fff;
     height: 166px;
     text-align: center;
-    font-family: 'Staatliches', cursive;
+   
     font-weight: bold;
 }
 
@@ -253,7 +279,8 @@ footer {
     width: 49%;
 }
 
-.temp, .ep {
+.temp,
+.ep {
     width: 24%;
     height: 43px;
 }
@@ -287,11 +314,6 @@ footer {
     margin: 26px auto;
 }
 
-.teste>.btn {
-    background: #2e2759;
-    color: #fff;
-    font-family: 'Staatliches', cursive;
-}
 
 /*teste*/
 
@@ -338,7 +360,7 @@ label.labelInput input[type="file"] {
     color: #fff;
     transition: all 300ms;
     cursor: pointer;
-    font-family: 'Staatliches', cursive;
+
 }
 
 .labelInput:hover {
@@ -368,16 +390,13 @@ label.labelInput input[type="file"] {
     padding: 50px;
 }
 
-h1 {
-    font-family: 'Staatliches';
-}
+
 
 .titulo {
     text-align: center;
 }
 
 .titulo>h1 {
-    font-family: 'Staatliches';
     margin: 64px auto 32px auto;
     font-weight: bold;
     color: #2e2759;
@@ -418,7 +437,7 @@ form {
 }
 
 .titulo>h1 {
-    font-family: 'Staatliches';
+
     margin: 64px auto 32px auto;
     font-weight: bold;
     color: #2e2759;
@@ -453,11 +472,10 @@ form {
     padding: 50px;
 }
 
-h1, h2 {
-    font-family: 'Staatliches';
-}
 
-.text_1, .text_2 {
+
+.text_1,
+.text_2 {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: auto 1fr;
@@ -486,16 +504,21 @@ div>h2 {
 }
 
 @media (max-width: 1066px) {
-    .links, .btns {
+
+    .links,
+    .btns {
         display: none;
     }
+
     .menu {
         display: flex;
         justify-content: space-evenly;
     }
+
     .menu a:hover {
         background: #2e2759;
     }
+
     .burgue {
         position: absolute;
         will-change: transform;
@@ -503,25 +526,32 @@ div>h2 {
         left: 0px;
         transform: translate3d(0px, 24px, 0px);
     }
+
     .dropdown {
         display: block;
     }
+
     .dropdown>a>img {
         width: 30px;
     }
+
     .dropdown-menu>a {
         color: #2e2759;
     }
+
     .btn0 {
         box-shadow: none;
     }
+
     .recurso {
         flex-direction: column;
         align-items: center;
     }
+
     .card2 {
         margin: 128px auto;
     }
+
     .formcont>form {
         width: 100%;
     }
@@ -531,36 +561,44 @@ div>h2 {
     .menu .none {
         display: none;
     }
+
     .saveep {
         display: flex;
         flex-direction: column;
     }
+
     .card {
         margin: 28px auto
     }
 }
 
 @media(max-width:360px) {
+
     /*Contato*/
     .textsoc>a>img {
         width: 50px;
     }
+
     .textsoc {
         font-size: 14px;
     }
+
     .formcont>form {
         width: 100%;
     }
+
     .banner {
         font-size: 20px;
         padding: 12px;
     }
+
     .busca {
         display: grid;
         grid-template-rows: 50px 50px;
         grid-template-columns: 50% 50%;
     }
-    .formulario>form{
+
+    .formulario>form {
         width: 100%;
     }
 }

@@ -10,7 +10,7 @@
     "body-parser": "^1.19.1",
     "connect-flash": "^0.1.1",
     "cookie-session": "^2.0.0",
-    "express": "^4.17.2",
+    "express": "^4.18.2",
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
     "mongoose": "^6.2.1",
@@ -19,7 +19,6 @@
   },
   "description": "<img align=\"center\" alt=\"Nodejs\" height=\"30\" width=\"98\"\r     src=\"https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white\">\r   <img align=\"center\" alt=\"Nodejs\" height=\"30\" width=\"98\"\r     src=\"https://img.shields.io/badge/Express.js-404D59?style=for-the-badge\">\r   <img align=\"center\" alt=\"mongodb\" height=\"30\" width=\"108\"\r     src=\"https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white\">",
   "version": "1.0.0",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jakelineliima/AnotherAnimes-nodejs.git"

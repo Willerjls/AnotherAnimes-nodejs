@@ -65,7 +65,8 @@ mongoose.Promise = global.Promise;
 
 mongoose
   .connect(MONGODB_URI =
-    "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net"
+
   )
   .then(() => {
     console.log("Banco de dados conectado");
@@ -86,6 +87,14 @@ app.use("/salvo", salvo);
 
 app.get("/", (req, res) => {
   res.render("index");
+});
+
+app.get("/contato", (req, res) => {
+  res.render("contato");
+});
+
+app.get("/sobre", (req, res) => {
+  res.render("sobre");
 });
 
 app.get("/404", (req, res) => {

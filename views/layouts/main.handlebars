@@ -9,6 +9,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Staatliches&display=swap"
     rel="stylesheet">
+
+{{!-- fonts --}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
   <title>Home AnotherAnime</title>
 </head>
 
@@ -18,9 +23,10 @@
  
    
       {{> mgs}}
+
       {{#if error}}
     
-    <div class="alert alert-danger">
+    <div class="alerta">
 
       {{error}}
 
@@ -30,6 +36,7 @@
       {{/if}}
 
       {{{body}}}
+
 
   {{> footer}}
 </body>
