@@ -65,7 +65,7 @@ mongoose.Promise = global.Promise;
 
 mongoose
   .connect(MONGODB_URI =
-    "mongodb+srv://jaqueline:restfull123@another.dfccs.mongodb.net"
+    "mongodb+srv://another_useradm:1289104@anotherdb.ls0wgo8.mongodb.net/test"
 
   )
   .then(() => {

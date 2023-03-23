@@ -11,15 +11,23 @@
       <li class="nav-item">
         <a class="nav-link" href="/sobre">Sobre</a>
       </li>
-
-  
-      {{!-- <li class="nav-item">
+{{#if user}}
+      <li class="nav-item">
         <a class="nav-link" href="/salvo/salvos">Salvos</a>
-      </li> --}}
+      </li>
+      {{else}}
+
+      <li class="nav-item" style="display: none">
+        <a class="nav-link" href="/salvo/salvos">Salvos</a>
+      </li>
+
+{{/if}}
 
     </ul>
     <div class="btns">
       {{#if user}}
+
+    
 
      <a
         style="border-radius: 22px;"

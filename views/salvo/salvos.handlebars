@@ -1,20 +1,12 @@
 <div class="bannersav text-center text-light">
-  <h1 style="padding: 54px;" class="txt-light font-weight-bold">Salvos</h1>
 </div>
 
-<button
-  style="border-radius: 22px; "
-  type="button"
-  class="btn btn-success mt-2"
->
-  <a href="/salvo/adicionar">adicionar novo</a></button>
 
-<main class="container saveep">
   {{#each salvos}}
     <div class="card" style="width: 18rem;">
-     <p>usuario  - {{usuario.nome}}</p> 
+      <p>usuario - {{usuario.nome}}</p>
       <div class="card-body">
-        <img src="{{imagem}}" >
+        <img src="{{imagem}}" />
         <h5 class="card-title text-center titulo">Titulo - {{titulo}} </h5>
         <div class="">
           <p class="card-text">Temporada - {{temporada}}</p>
@@ -22,20 +14,28 @@
         </div>
 
         <div class="edits">
-          <a href="/salvo/salvos/edit/{{_id}}" ><button class="btn btn-outline-success"
+          <a href="/salvo/salvos/edit/{{_id}}"><button
+              class="btn btn-outline-success"
               type="submit"
             >Editar</button>
           </a>
           <form action="/salvo/salvos/deletar" method="POST">
             <input type="hidden" name="id" value="{{_id}}" />
-           <button class="btn btn-outline-danger"
-                type="submit"
-              >Excluir</button>
+            <button
+              class="btn btn-outline-danger"
+              type="submit"
+            >Excluir</button>
           </form>
         </div>
       </div>
     </div>
+
   {{else}}
-    <p>Nenhum iten salvo</p>
+    <p class="alinhabtn">Nenhum item salvo</p>
   {{/each}}
-</main>
+
+  <div class="alinhabtn">
+  <button type="button" class="btn btnadd">
+    <a href="/salvo/adicionar">adicionar novo</a></button>
+</div>
+

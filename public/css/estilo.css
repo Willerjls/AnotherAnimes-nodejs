@@ -1,4 +1,4 @@
-body{
+body {
     font-family: 'Nunito', sans-serif !important;
 }
 
@@ -6,22 +6,35 @@ header {
     background: #2E2759;
 }
 
-p{
+p {
     font-weight: bolder;
 }
 
 /* login */
-.btnlogin{
+.btnlogin,
+.btnadd {
     background-color: #2E2759 !important;
     color: #FFF !important;
     font-weight: bold;
     border-radius: 22px !important;
-
 }
 
-.form-login{
+.btnadd a {
+    text-decoration: none;
+    color: #FFF !important;
+}
+
+.alinhabtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0 36px 0;
+}
+
+.form-login {
     width: 360px !important;
 }
+
 .menu {
     display: flex;
     justify-content: space-between;
@@ -30,8 +43,9 @@ p{
     list-style: none;
     height: 112px;
 }
-.alerta{
-background-color: transparent !important;
+
+.alerta {
+    background-color: transparent !important;
 }
 
 .dropdown {
@@ -53,7 +67,7 @@ background-color: transparent !important;
 
 }
 
-.form-control{
+.form-control {
     font-weight: bold !important;
 }
 
@@ -236,7 +250,7 @@ background-color: transparent !important;
 
 .titulo {
     color: #2e2759;
-  
+
 }
 
 .edits>a {
@@ -249,7 +263,9 @@ footer {
     color: #fff;
     height: 166px;
     text-align: center;
-   
+    position: fixed;
+    top: 85%;
+    width: 100%;
     font-weight: bold;
 }
 
