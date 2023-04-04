@@ -8,14 +8,25 @@ const { logado } = require("../helpers/logado");
 const router = express.Router();
 
 // Rotas
-router.get("/salvos", logado, async (req, res) => {
+router.get("/salvos", logado, (req, res) => {
   Salvo.find()
     .then((salvos) => {
       res.render("salvo/salvos", { salvos: salvos });
+      req.flash("success_mgs", `Bem-vindo(a), ${req.session.userId}!`);
     })
     .catch((err) => {
       req.flash("error_mgs", "Não foi possivel carregar");
     });
+
+
+    // Usuario.findById(req.session.userId, function(err, usuario) {
+    //   if (err || !usuario) {
+    //     res.send('Usuário não encontrado.');
+    //   } else {
+       
+    //     res.send('Bem-vindo, ' + usuario.nome + '!');
+    //   }
+    // });
 });
 
 router.get("/adicionar", logado, (req, res) => {
@@ -32,7 +43,7 @@ router.get("/adicionar", logado, (req, res) => {
 router.post("/adicionar/add", logado, (req, res) => {
   ;
   const novoAnime = {
-    usuario: req.params.usuario,
+    usuario: req.params.id,
     titulo: req.body.titulo,
     temporada: req.body.temporada,
     episodio: req.body.episodio,
@@ -42,7 +53,7 @@ router.post("/adicionar/add", logado, (req, res) => {
   new Salvo(novoAnime)
     .save()
     .then(() => {
-      req.flash("success_mgs", "Tudo salvo amiguinho");
+
       res.redirect("/salvo/salvos");
     })
     .catch((err) => {

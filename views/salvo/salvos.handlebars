@@ -1,10 +1,16 @@
 <div class="bannersav text-center text-light">
 </div>
 
+{{#each userId}}
+<p>{{nome}}</p>
+
+{{else}}
+<option value="0">Nenhuma user</option>
+{{/each}}
+
 
   {{#each salvos}}
     <div class="card" style="width: 18rem;">
-      <p>usuario - {{usuario.nome}}</p>
       <div class="card-body">
         <img src="{{imagem}}" />
         <h5 class="card-title text-center titulo">Titulo - {{titulo}} </h5>

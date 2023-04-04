@@ -100,15 +100,15 @@ router.post("/registro", (req, res) => {
 });
 
 router.get("/login", (req, res) => {
-  res.render("usuario/login");
+ res.render("usuario/login");
 });
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/salvo/salvos",
     failureRedirect: "/usuario/login",
-    failureFlash: true,
   })(req, res, next);
+
 });
 
 router.get("/logout", (req, res) => {
@@ -116,7 +116,6 @@ router.get("/logout", (req, res) => {
   req.flash("success_mgs", "Você saiu");
   res.redirect("/");
 });
-
 
 
 module.exports = router;

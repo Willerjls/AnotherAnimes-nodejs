@@ -1,6 +1,10 @@
+const express = require("express");
 const localStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const router = express.Router();
+const passport = require('passport');
+const { logado } = require("../helpers/logado");
 
 // Model Usuario importação
 require("../models/Usuario");
@@ -30,14 +34,22 @@ module.exports = function (passport) {
       }
     )
   );
-  // Salvando dados na seção
-  passport.serializeUser((usuario, done) => {
-    done(null, usuario.id)
-  })
-
-  passport.deserializeUser((id, done) => {
-    Usuario.findById(id, (err, usuario) => {
-      done(err,usuario)
-    })
-  })
 };
+
+
+passport.serializeUser((usuario, done) => {
+  done(null, usuario.id)
+})
+
+passport.deserializeUser((id, done) => {
+  Usuario.findById(id, (err, usuario) => {
+    done(err,usuario)
+  })
+})
+
+// Salvando dados na seção
+router.post('/salvos', (req, res) => {
+  req.session.userId = req.usuario.id;
+  req.flash("success_mgs", 'Bem-vindo, ' + Usuario.nome + '!');
+});
+
