@@ -104,12 +104,16 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
+  req.session.user = req.usuario;
   passport.authenticate("local", {
     successRedirect: "/salvo/salvos",
     failureRedirect: "/usuario/login",
   })(req, res, next);
+  
+
 
 });
+
 
 router.get("/logout", (req, res) => {
   req.logout();

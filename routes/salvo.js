@@ -12,27 +12,19 @@ router.get("/salvos", logado, (req, res) => {
   Salvo.find()
     .then((salvos) => {
       res.render("salvo/salvos", { salvos: salvos });
-      req.flash("success_mgs", `Bem-vindo(a), ${req.session.userId}!`);
+      var usuario = req.session.usuario;
+      req.send(" Bem-vindo(a)",  + usuario.nome);
     })
     .catch((err) => {
       req.flash("error_mgs", "Não foi possivel carregar");
     });
-
-
-    // Usuario.findById(req.session.userId, function(err, usuario) {
-    //   if (err || !usuario) {
-    //     res.send('Usuário não encontrado.');
-    //   } else {
-       
-    //     res.send('Bem-vindo, ' + usuario.nome + '!');
-    //   }
-    // });
 });
 
 router.get("/adicionar", logado, (req, res) => {
   Usuario.findOne({id: req.authInfo})
     .then((usuario) => {
       res.render("salvo/adicionar", { usuario: usuario });
+      
     })
     .catch((err) => {
       req.flash("error_mgs", "Ocorreu um erro ao carregar");
@@ -41,7 +33,6 @@ router.get("/adicionar", logado, (req, res) => {
 });
 
 router.post("/adicionar/add", logado, (req, res) => {
-  ;
   const novoAnime = {
     usuario: req.params.id,
     titulo: req.body.titulo,
@@ -53,7 +44,6 @@ router.post("/adicionar/add", logado, (req, res) => {
   new Salvo(novoAnime)
     .save()
     .then(() => {
-
       res.redirect("/salvo/salvos");
     })
     .catch((err) => {

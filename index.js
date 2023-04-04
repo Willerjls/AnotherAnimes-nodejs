@@ -20,8 +20,8 @@ require("./config/auth")(passport);
 app.use(
   session({
     secret: "anotheranimes",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
   })
 );
 

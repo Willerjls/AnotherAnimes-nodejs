@@ -1,7 +1,7 @@
 <div class="bannersav text-center text-light">
 </div>
 
-{{#each userId}}
+{{#each user}}
 <p>{{nome}}</p>
 
 {{else}}
@@ -11,6 +11,8 @@
 
   {{#each salvos}}
     <div class="card" style="width: 18rem;">
+
+      <p>usuario - {{user}}</p>
       <div class="card-body">
         <img src="{{imagem}}" />
         <h5 class="card-title text-center titulo">Titulo - {{titulo}} </h5>
