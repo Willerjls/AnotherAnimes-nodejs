@@ -16,7 +16,7 @@ const SalvoSchema = new Schema({
   },
   // Referencia ao usuario
   usuario: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario"
   }
 });

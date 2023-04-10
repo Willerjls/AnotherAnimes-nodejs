@@ -10,12 +10,6 @@
 
 {{/each}}
 
-{{#each user}}
-<p>{{nome}}</p>
-
-{{else}}
-<option value="0">Nenhuma user</option>
-{{/each}}
 
 
 
@@ -25,6 +19,7 @@
                <!--- <input type="file">--->
         </div>
             <div class="enter">
+                <input class="inputtitle" type="text" name="usuario" placeholder="Titulo" value="{{user._id}}">
                 <div class="inputs">
                     <input class="inputtitle" type="text" name="titulo" placeholder="Titulo">
                 </div>

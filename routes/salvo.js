@@ -8,6 +8,7 @@ const { logado } = require("../helpers/logado");
 const router = express.Router();
 
 // Rotas
+
 router.get("/salvos", logado, (req, res) => {
   Salvo.find()
     .then((salvos) => {
@@ -20,11 +21,13 @@ router.get("/salvos", logado, (req, res) => {
     });
 });
 
+
+
 router.get("/adicionar", logado, (req, res) => {
-  Usuario.findOne({id: req.authInfo})
+  Usuario.find()
     .then((usuario) => {
       res.render("salvo/adicionar", { usuario: usuario });
-      
+      var usuario = req.session.usuario;
     })
     .catch((err) => {
       req.flash("error_mgs", "Ocorreu um erro ao carregar");
@@ -34,7 +37,7 @@ router.get("/adicionar", logado, (req, res) => {
 
 router.post("/adicionar/add", logado, (req, res) => {
   const novoAnime = {
-    usuario: req.params.id,
+    usuario: req.body.usuario,
     titulo: req.body.titulo,
     temporada: req.body.temporada,
     episodio: req.body.episodio,
@@ -47,8 +50,8 @@ router.post("/adicionar/add", logado, (req, res) => {
       res.redirect("/salvo/salvos");
     })
     .catch((err) => {
-      res.flash("error_mgs", "Ocorreu um erro");
       res.redirect("/salvo/adicionar");
+      req.flash("error_mgs", "Ocorreu um erro ao carregar");
     });
 });
 
