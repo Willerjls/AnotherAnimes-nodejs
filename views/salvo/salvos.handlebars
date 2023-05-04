@@ -2,7 +2,10 @@
 </div>
 
 {{#each user}}
-<p>{{nome}}</p>
+
+
+<p><strong>{{nome}}</strong></p>
+
 
 {{else}}
 <option value="0">Nenhuma user</option>
@@ -10,7 +13,7 @@
 
 
   {{#each salvos}}
-    <div class="card" style="width: 18rem;">
+    <div class="card" >
 
       <p>usuario - {{usuario}}</p>
       <div class="card-body">

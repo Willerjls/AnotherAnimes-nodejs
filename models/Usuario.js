@@ -11,10 +11,17 @@ const UsuarioSchema = new Schema({
   senha: {
     type: String
   },
-  logado: {
-    type: Number,
-    default: 0
-  }
+  // logado: {
+  //   type: Number,
+  //   default: 0
+  // },
+
+  // Referencia ao iten salvo
+  // salvos: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Salvo"
+  // }
+
 })
 
 module.exports = mongoose.model("Usuario", UsuarioSchema)

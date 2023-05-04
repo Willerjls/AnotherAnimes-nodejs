@@ -14,7 +14,7 @@ const SalvoSchema = new Schema({
   imagem: {
     type: String,
   },
-  // Referencia ao usuario
+  //Referencia ao usuario
   usuario: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario"

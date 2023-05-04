@@ -9,18 +9,18 @@ const router = express.Router();
 
 // Rotas
 
+
 router.get("/salvos", logado, (req, res) => {
-  Salvo.find()
+  // var usuario = req.session.user;
+  Salvo.find({usuario: req.user})
     .then((salvos) => {
+
       res.render("salvo/salvos", { salvos: salvos });
-      var usuario = req.session.usuario;
-      req.send(" Bem-vindo(a)",  + usuario.nome);
     })
     .catch((err) => {
       req.flash("error_mgs", "Não foi possivel carregar");
     });
 });
-
 
 
 router.get("/adicionar", logado, (req, res) => {

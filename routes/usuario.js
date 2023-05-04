@@ -109,9 +109,6 @@ router.post("/login", (req, res, next) => {
     successRedirect: "/salvo/salvos",
     failureRedirect: "/usuario/login",
   })(req, res, next);
-  
-
-
 });
 
 
@@ -120,6 +117,7 @@ router.get("/logout", (req, res) => {
   req.flash("success_mgs", "Você saiu");
   res.redirect("/");
 });
+
 
 
 module.exports = router;
