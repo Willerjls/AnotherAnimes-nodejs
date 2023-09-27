@@ -103,7 +103,7 @@ app.get("/404", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log("O seu servidor esta rodando!!! :)");
+  console.log("O seu servidor esta rodando!!! Acesse: http://localhost:8080/ :)");
 });
 
 const uri = process.env.MONGODB_URI;
