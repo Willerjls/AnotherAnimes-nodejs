@@ -1,5 +1,5 @@
  <main class="container adccont">
-        <form class="adicionar" action="/salvo/adicionar/add" method="POST">
+        <form class="adicionar" action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
             <h2>ADICIONE AQUI SEUS EPISÓDIOS ASSISTIDOS</h2>
 
 {{#each erros}}
@@ -15,7 +15,7 @@
 
             <div class="adcimg">
                 <label class="labelInput">Adicione a imagem
-                <input type="file" name="imagem" class="btn file_customizada"  accept="image/png, image/jpeg"  multiple/></label>
+                <input type="file" name="imagem" class="btn file_customizada"/></label>
                <!--- <input type="file">--->
         </div>
             <div class="enter">
