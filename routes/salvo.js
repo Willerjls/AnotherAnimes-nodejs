@@ -9,12 +9,14 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' }); // Define a pasta onde os arquivos temporários serão armazenados
 const cloudinary = require('cloudinary').v2;
+
+
 // Rotas
 
-
+// rota de acesso a salvos
 router.get("/salvos", logado, (req, res) => {
   // var usuario = req.session.user;
-  Salvo.find({usuario: req.user})
+  Salvo.find({ usuario: req.user })
     .then((salvos) => {
 
       res.render("salvo/salvos", { salvos: salvos });
@@ -24,7 +26,7 @@ router.get("/salvos", logado, (req, res) => {
     });
 });
 
-
+// rota de acesso ao Adicionar
 router.get("/adicionar", logado, (req, res) => {
   Usuario.find()
     .then((usuario) => {
@@ -37,7 +39,7 @@ router.get("/adicionar", logado, (req, res) => {
     });
 });
 
-
+// rota de lancamento de dados
 router.post('/adicionar/add', logado, upload.single('imagem'), async (req, res) => {
   try {
     // Primeiro, faça o upload da imagem para o Cloudinary
@@ -70,26 +72,8 @@ router.post('/adicionar/add', logado, upload.single('imagem'), async (req, res) 
   }
 });
 
-// router.post("/adicionar/add", logado, (req, res) => {
-//   const novoAnime = {
-//     usuario: req.body.usuario,
-//     titulo: req.body.titulo,
-//     temporada: req.body.temporada,
-//     episodio: req.body.episodio,
-//     imagem: req.body.imagem,
-//   };
 
-//   new Salvo(novoAnime)
-//     .save()
-//     .then(() => {
-//       res.redirect("/salvo/salvos");
-//     })
-//     .catch((err) => {
-//       res.redirect("/salvo/adicionar");
-//       req.flash("error_mgs", "Ocorreu um erro ao carregar");
-//     });
-// });
-
+// Rota de acessar edição
 router.get("/salvos/edit/:id", logado, (req, res) => {
   Salvo.findOne({ _id: req.params.id })
     .then((salvo) => {
@@ -101,24 +85,64 @@ router.get("/salvos/edit/:id", logado, (req, res) => {
     });
 });
 
-router.post("/salvos/edit", logado, (req, res) => {
-  Salvo.findOne({ _id: req.body.id }).then((salvo) => {
-    (salvo.titulo = req.body.titulo),
+// router.post("/salvos/edit", logado, (req, res) => {
+
+//   Salvo.findOne({ _id: req.body.id }).then((salvo) => {
+//     (salvo.titulo = req.body.titulo),
+//       (salvo.episodio = req.body.episodio),
+//       (salvo.temporada = req.body.temporada),
+//       (salvo.imagem = req.body.imagem);
+//     salvo
+//       .save()
+//       .then(() => {
+//         req.flash("success_mgs", "Atualizado com sucesso");
+//         res.redirect("/salvo/salvos");
+//       })
+//       .catch((err) => {
+//         req.flash("error_mgs", "Não foi possivel atualizar");
+//         res.redirect("/salvo/salvos");
+//       });
+//   });
+// });
+
+
+router.post("/salvos/edit", logado, upload.single('imagem'), async(req, res) => {
+ // Primeiro, faça o upload da nova imagem para o Cloudinary
+cloudinary.uploader.upload(req.file.path, (error, result) => {
+  if (error) {
+    console.error('Erro ao fazer upload da nova imagem:', error);
+    req.flash("error_mgs", "Não foi possível fazer o upload da imagem");
+    res.redirect("/salvo/salvos");
+  } else {
+    // A URL da imagem está em result.secure_url
+    const imageUrl = result.secure_url;
+
+    Salvo.findOne({ _id: req.body.id }).then((salvo) => {
+      (salvo.titulo = req.body.titulo),
       (salvo.episodio = req.body.episodio),
       (salvo.temporada = req.body.temporada),
-      (salvo.imagem = req.body.imagem);
-    salvo
-      .save()
-      .then(() => {
-        req.flash("success_mgs", "Atualizado com sucesso");
-        res.redirect("/salvo/salvos");
-      })
-      .catch((err) => {
-        req.flash("error_mgs", "Não foi possivel atualizar");
-        res.redirect("/salvo/salvos");
-      });
-  });
+      (salvo.imagem = imageUrl); // Atualize o imageUrl com a nova URL do Cloudinary
+      salvo
+        .save()
+        .then(() => {
+          req.flash("success_mgs", "Atualizado com sucesso");
+          res.redirect("/salvo/salvos");
+        })
+        .catch((err) => {
+          console.error('Erro ao salvar objeto Salvo:', err);
+          req.flash("error_mgs", "Não foi possível atualizar o objeto Salvo");
+          res.redirect("/salvo/salvos");
+        });
+    }).catch((err) => {
+      console.error('Erro ao encontrar objeto Salvo:', err);
+      req.flash("error_mgs", "Não foi possível encontrar o objeto Salvo");
+      res.redirect("/salvo/salvos");
+    });
+  }
 });
+});
+
+
 
 router.post("/salvos/deletar", logado, (req, res) => {
   Salvo.remove({ _id: req.body.id })

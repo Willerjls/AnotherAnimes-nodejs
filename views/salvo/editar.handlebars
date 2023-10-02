@@ -1,5 +1,5 @@
 <main class="container adccont">
-  <form class="adicionar" action="/salvo/salvos/edit" method="POST">
+  <form class="adicionar" action="/salvo/salvos/edit" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="id" value="{{salvo._id}}">
     <h2> Vamos atualizar</h2>
 
@@ -13,14 +13,8 @@
 
     <div class="adcimg">
       <label class="labelInput">Adicione a imagem
-        <input
-          type="file"
-          name="imagem"
-          class="btn file_customizada"
-          accept="image/png, image/jpeg"
-            value="{{salvo.imagem}}"
-          multiple
-        />
+       <input type="file" name="imagem" class="btn file_customizada"/>
+      
       </label>
     </div>
     <div class="enter">
