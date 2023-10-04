@@ -121,19 +121,6 @@ cloudinary.uploader.upload(req.file.path, (error, result) => {
 });
 });
 
-// router.post("/salvos/deletar", logado, (req, res) => {
-//   Salvo.remove({ _id: req.body.id })
-
-//     .then(() => {
-//       req.flash("success_mgs", "Excluido com sucesso");
-//       res.redirect("/salvo/salvos");
-//     })
-//     .catch((err) => {
-//       req.flash("error_mgs", "Ocorreu um erro ao excluir");
-//       res.redirect("/salvo/salvos");
-//     });
-// });
-
 
 router.post('/salvos/deletar', logado, (req, res) => {
   // Encontre o documento Salvo pelo ID
