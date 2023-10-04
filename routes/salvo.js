@@ -85,27 +85,6 @@ router.get("/salvos/edit/:id", logado, (req, res) => {
     });
 });
 
-// router.post("/salvos/edit", logado, (req, res) => {
-
-//   Salvo.findOne({ _id: req.body.id }).then((salvo) => {
-//     (salvo.titulo = req.body.titulo),
-//       (salvo.episodio = req.body.episodio),
-//       (salvo.temporada = req.body.temporada),
-//       (salvo.imagem = req.body.imagem);
-//     salvo
-//       .save()
-//       .then(() => {
-//         req.flash("success_mgs", "Atualizado com sucesso");
-//         res.redirect("/salvo/salvos");
-//       })
-//       .catch((err) => {
-//         req.flash("error_mgs", "Não foi possivel atualizar");
-//         res.redirect("/salvo/salvos");
-//       });
-//   });
-// });
-
-
 router.post("/salvos/edit", logado, upload.single('imagem'), async(req, res) => {
  // Primeiro, faça o upload da nova imagem para o Cloudinary
 cloudinary.uploader.upload(req.file.path, (error, result) => {
