@@ -121,17 +121,51 @@ cloudinary.uploader.upload(req.file.path, (error, result) => {
 });
 });
 
+// router.post("/salvos/deletar", logado, (req, res) => {
+//   Salvo.remove({ _id: req.body.id })
+
+//     .then(() => {
+//       req.flash("success_mgs", "Excluido com sucesso");
+//       res.redirect("/salvo/salvos");
+//     })
+//     .catch((err) => {
+//       req.flash("error_mgs", "Ocorreu um erro ao excluir");
+//       res.redirect("/salvo/salvos");
+//     });
+// });
 
 
-router.post("/salvos/deletar", logado, (req, res) => {
-  Salvo.remove({ _id: req.body.id })
+router.post('/salvos/deletar', logado, (req, res) => {
+  // Encontre o documento Salvo pelo ID
+  Salvo.findOne({ _id: req.body.id })
+    .then((salvo) => {
+      if (!salvo) {
+        req.flash('error_mgs', 'Registro não encontrado');
+        return res.redirect('/salvo/salvos');
+      }
+
+      // Extrai o public_id da URL da imagem (supondo que sua URL seja algo como "https://res.cloudinary.com/sua_cloud_name/image/upload/public_id.jpg")
+      const publicId = salvo.imagem.split('/').pop().split('.')[0];
+
+      // Excluir a imagem do Cloudinary
+      cloudinary.uploader.destroy(publicId, (error, result) => {
+        if (error) {
+          console.error('Erro ao excluir imagem do Cloudinary:', error);
+        } else {
+          console.log('Imagem excluída com sucesso do Cloudinary:', result);
+        }
+      });
+
+      // Remova o documento Salvo do banco de dados
+      return salvo.remove();
+    })
     .then(() => {
-      req.flash("success_mgs", "Excluido com sucesso");
-      res.redirect("/salvo/salvos");
+      req.flash('success_mgs', 'Excluído com sucesso');
+      res.redirect('/salvo/salvos');
     })
     .catch((err) => {
-      req.flash("error_mgs", "Ocorreu um erro ao excluir");
-      res.redirect("/salvo/salvos");
+      req.flash('error_mgs', 'Ocorreu um erro ao excluir');
+      res.redirect('/salvo/salvos');
     });
 });
 
