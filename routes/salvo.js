@@ -9,7 +9,8 @@ const router = express.Router();
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' }); // Define a pasta onde os arquivos temporários serão armazenados
 const cloudinary = require('cloudinary').v2;
-
+const { promisify } = require('util');
+const cloudinaryUpload = promisify(cloudinary.uploader.upload);
 
 // Rotas
 
@@ -72,7 +73,6 @@ router.post('/adicionar/add', logado, upload.single('imagem'), async (req, res) 
   }
 });
 
-
 // Rota de acessar edição
 router.get("/salvos/edit/:id", logado, (req, res) => {
   Salvo.findOne({ _id: req.params.id })
@@ -85,40 +85,83 @@ router.get("/salvos/edit/:id", logado, (req, res) => {
     });
 });
 
-router.post("/salvos/edit", logado, upload.single('imagem'), async(req, res) => {
- // Primeiro, faça o upload da nova imagem para o Cloudinary
-cloudinary.uploader.upload(req.file.path, (error, result) => {
-  if (error) {
-    console.error('Erro ao fazer upload da nova imagem:', error);
-    req.flash("error_mgs", "Não foi possível fazer o upload da imagem");
-    res.redirect("/salvo/salvos");
-  } else {
-    // A URL da imagem está em result.secure_url
-    const imageUrl = result.secure_url;
+// router.post("/salvos/edit", logado, upload.single('imagem'), async(req, res) => {
+//  // Primeiro, faça o upload da nova imagem para o Cloudinary
+// cloudinary.uploader.upload(req.file.path, (error, result) => {
+//   if (error) {
+//     console.error('Erro ao fazer upload da nova imagem:', error);
+//     req.flash("error_mgs", "Não foi possível fazer o upload da imagem");
+//     res.redirect("/salvo/salvos");
+//   } else {
+//     // A URL da imagem está em result.secure_url
+//     const imageUrl = result.secure_url;
 
-    Salvo.findOne({ _id: req.body.id }).then((salvo) => {
-      (salvo.titulo = req.body.titulo),
-      (salvo.episodio = req.body.episodio),
-      (salvo.temporada = req.body.temporada),
-      (salvo.imagem = imageUrl); // Atualize o imageUrl com a nova URL do Cloudinary
-      salvo
-        .save()
-        .then(() => {
-          req.flash("success_mgs", "Atualizado com sucesso");
-          res.redirect("/salvo/salvos");
-        })
-        .catch((err) => {
-          console.error('Erro ao salvar objeto Salvo:', err);
-          req.flash("error_mgs", "Não foi possível atualizar o objeto Salvo");
-          res.redirect("/salvo/salvos");
-        });
-    }).catch((err) => {
-      console.error('Erro ao encontrar objeto Salvo:', err);
-      req.flash("error_mgs", "Não foi possível encontrar o objeto Salvo");
-      res.redirect("/salvo/salvos");
-    });
+//     Salvo.findOne({ _id: req.body.id }).then((salvo) => {
+//       (salvo.titulo = req.body.titulo),
+//       (salvo.episodio = req.body.episodio),
+//       (salvo.temporada = req.body.temporada),
+//       (salvo.imagem = imageUrl); // Atualize o imageUrl com a nova URL do Cloudinary
+//       salvo
+//         .save()
+//         .then(() => {
+//           req.flash("success_mgs", "Atualizado com sucesso");
+//           res.redirect("/salvo/salvos");
+//         })
+//         .catch((err) => {
+//           console.error('Erro ao salvar objeto Salvo:', err);
+//           req.flash("error_mgs", "Não foi possível atualizar o objeto Salvo");
+//           res.redirect("/salvo/salvos");
+//         });
+//     }).catch((err) => {
+//       console.error('Erro ao encontrar objeto Salvo:', err);
+//       req.flash("error_mgs", "Não foi possível encontrar o objeto Salvo");
+//       res.redirect("/salvo/salvos");
+//     });
+//   }
+// });
+// });
+
+router.post('/salvos/edit', logado, upload.single('imagem'), async (req, res) => {
+  try {
+    if (!req.file) {
+      throw new Error('Nenhuma imagem foi enviada');
+    }
+
+    // Primeiro, faça o upload da nova imagem para o Cloudinary
+    const result = await cloudinaryUpload(req.file.path);
+
+    // A URL da nova imagem está em result.secure_url
+    const novaImageUrl = result.secure_url;
+
+    // Encontre o documento Salvo pelo ID
+    const salvo = await Salvo.findOne({ _id: req.body.id });
+
+    if (!salvo) {
+      throw new Error('Registro não encontrado');
+    }
+
+    // Excluir a imagem anterior do Cloudinary, se houver uma imagem anterior
+    if (salvo.imagem) {
+      const publicIdAntigo = salvo.imagem.split('/').pop().split('.')[0];
+      await cloudinary.uploader.destroy(publicIdAntigo);
+    }
+
+    // Atualize o campo imagem com a nova URL do Cloudinary
+    salvo.titulo = req.body.titulo;
+    salvo.episodio = req.body.episodio;
+    salvo.temporada = req.body.temporada;
+    salvo.imagem = novaImageUrl;
+
+    // Salve as alterações no documento Salvo
+    await salvo.save();
+
+    req.flash('success_mgs', 'Atualizado com sucesso');
+    res.redirect('/salvo/salvos');
+  } catch (error) {
+    console.error('Erro:', error.message);
+    req.flash('error_mgs', 'Ocorreu um erro ao atualizar');
+    res.redirect('/salvo/salvos');
   }
-});
 });
 
 
