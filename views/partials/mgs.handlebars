@@ -2,9 +2,29 @@
 
 {{#if success_mgs}}
 
-<div class="alert alert-success">
-  {{success_mgs}}
+<div class="mdh003_modal_ds">
+  <div class="mdh003_bfmodal_container" id="mdh003_modal">
+    <div>
+      <div><button class="mdh003_fecharbtn" id="mdh003_close-modal">X</button></div>
+
+      <div><img alt="arara azul" class="mdh003_modalimg"
+          src="https://smiles-mkt.s3.amazonaws.com/imgs_teste_modal/imgteste.jpg" /></div>
+    </div>
+
+    <div>
+      <div>
+       
+
+        <p class="mdh003_textomodalp">C{{success_mgs}}</p>
+
+        <div class="mdh003_divsbtns"> <a class="mdh003_btnnao"
+            id="mdh003_close-modal">Não, muito obrigado</a></div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 {{/if}}
 
@@ -16,3 +36,19 @@
 </div>
 
 {{/if}}
+
+
+
+{{!-- 
+<script>
+  const closeModalButton = document.querySelector("#mdh003_close-modal");
+  const mdh003_modal_class = document.querySelector("#mdh003_modal");
+
+  const toggleModal = () => {
+    mdh003_modal_class.classList.toggle("hide");
+  };
+
+  [closeModalButton].forEach((el) => {
+    el.addEventListener("click", () => toggleModal());
+  });
+</script> --}}

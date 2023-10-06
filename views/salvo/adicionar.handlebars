@@ -1,35 +1,37 @@
- <main class="container adccont">
-        <form class="adicionar" action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
-            <h2>ADICIONE AQUI SEUS EPISÓDIOS ASSISTIDOS</h2>
+<main class="container adccont">
+  <form class="adicionar" action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
+    <h2>ADICIONE AQUI SEUS EPISÓDIOS ASSISTIDOS</h2>
 
-{{#each erros}}
-<div class="alert alert-danger">
-{{texto}}
-</div>
-{{else}}
+    {{#each erros}}
+    <div class="alert alert-danger">
+      {{texto}}
+    </div>
+    {{else}}
 
-{{/each}}
-
-
+    {{/each}}
 
 
-            <div class="adcimg">
-                <label class="labelInput">Adicione a imagem
-                <input type="file" name="imagem" class="btn file_customizada"/></label>
-               <!--- <input type="file">--->
-        </div>
-            <div class="enter">
-                <input class="inputtitle" type="text" name="usuario" placeholder="Titulo" value="{{user._id}}">
-                <div class="inputs">
-                    <input class="inputtitle" type="text" name="titulo" placeholder="Titulo">
-                </div>
-                <div class="tmp">
-                    <input class="temp" type="text" name="temporada" placeholder="Temporada" >
-                    <input class="ep" type="number" name="episodio" placeholder="Episódio">
-                </div>
-            </div>
-            <div class="teste">
-                <button style="border-radius: 22px;" type="submit" class="btn borda">Salvar</button>
-            </div>
-        </form>
-    </main>
+
+
+    <div class="adcimg">
+      <label class="labelInput">Adicione a imagem
+        <input id="inputFile" type="file" name="imagem" class="btn file_customizada" />
+        <div id="imagePreview"></div>
+      </label>
+      <!--- <input type="file">--->
+    </div>
+    <div class="enter">
+      <input class="inputtitle" type="text" name="usuario" placeholder="Titulo" value="{{user._id}}">
+      <div class="inputs">
+        <input class="inputtitle" type="text" name="titulo" placeholder="Titulo">
+      </div>
+      <div class="tmp">
+        <input class="temp" type="text" name="temporada" placeholder="Temporada">
+        <input class="ep" type="number" name="episodio" placeholder="Episódio">
+      </div>
+    </div>
+    <div class="teste">
+      <button style="border-radius: 22px;" type="submit" class="btn borda">Salvar</button>
+    </div>
+  </form>
+</main>

@@ -4,6 +4,7 @@ const { engine } = require("express-handlebars");
 const bodyParser = require("body-parser");
 const usuario = require("./routes/usuario");
 const salvo = require("./routes/salvo");
+const contato = require("./routes/contato")
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
@@ -12,6 +13,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 require("./models/Usuario");
 require("./models/Salvo");
+require("./models/Contato");
 require("./config/auth")(passport);
 const cloudinary = require('cloudinary').v2;
 
@@ -93,6 +95,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/usuario", usuario);
 app.use("/salvo", salvo);
+app.use("/contato", contato);
 
 // Importação de rotas externas
 
@@ -100,9 +103,6 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/contato", (req, res) => {
-  res.render("contato");
-});
 
 app.get("/sobre", (req, res) => {
   res.render("sobre");

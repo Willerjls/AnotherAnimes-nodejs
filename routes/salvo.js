@@ -85,41 +85,6 @@ router.get("/salvos/edit/:id", logado, (req, res) => {
     });
 });
 
-// router.post("/salvos/edit", logado, upload.single('imagem'), async(req, res) => {
-//  // Primeiro, faça o upload da nova imagem para o Cloudinary
-// cloudinary.uploader.upload(req.file.path, (error, result) => {
-//   if (error) {
-//     console.error('Erro ao fazer upload da nova imagem:', error);
-//     req.flash("error_mgs", "Não foi possível fazer o upload da imagem");
-//     res.redirect("/salvo/salvos");
-//   } else {
-//     // A URL da imagem está em result.secure_url
-//     const imageUrl = result.secure_url;
-
-//     Salvo.findOne({ _id: req.body.id }).then((salvo) => {
-//       (salvo.titulo = req.body.titulo),
-//       (salvo.episodio = req.body.episodio),
-//       (salvo.temporada = req.body.temporada),
-//       (salvo.imagem = imageUrl); // Atualize o imageUrl com a nova URL do Cloudinary
-//       salvo
-//         .save()
-//         .then(() => {
-//           req.flash("success_mgs", "Atualizado com sucesso");
-//           res.redirect("/salvo/salvos");
-//         })
-//         .catch((err) => {
-//           console.error('Erro ao salvar objeto Salvo:', err);
-//           req.flash("error_mgs", "Não foi possível atualizar o objeto Salvo");
-//           res.redirect("/salvo/salvos");
-//         });
-//     }).catch((err) => {
-//       console.error('Erro ao encontrar objeto Salvo:', err);
-//       req.flash("error_mgs", "Não foi possível encontrar o objeto Salvo");
-//       res.redirect("/salvo/salvos");
-//     });
-//   }
-// });
-// });
 
 router.post('/salvos/edit', logado, upload.single('imagem'), async (req, res) => {
   try {
