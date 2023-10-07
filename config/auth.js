@@ -47,9 +47,3 @@ passport.deserializeUser((id, done) => {
   })
 })
 
-// // Salvando dados na seção
-// router.post('/salvos', (req, res) => {
-//   req.session.userId = req.usuario.id;
-//   req.flash("success_mgs", 'Bem-vindo, ' + Usuario.nome + '!');
-// });
-

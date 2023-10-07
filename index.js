@@ -36,6 +36,7 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.success_mgs = req.flash("success_mgs");
   res.locals.error_mgs = req.flash("error_mgs");
+  res.locals.modal_mgs = req.flash("modal_mgs")
   req.flash("error");
   res.locals.user = req.user || null;
   next();

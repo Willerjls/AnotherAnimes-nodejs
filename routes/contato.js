@@ -20,7 +20,7 @@ router.post('/contato/add', (req, res) => {
   new Contato(novoMensagem)
     .save()
     .then(() => {
-      req.flash('success_mgs', 'Sua mensagem foi enviada com sucesso, em breve te responderemos');
+      req.flash('modal_mgs', 'Sua mensagem foi enviada com sucesso, em breve te responderemos');
       res.redirect('/');
     })
     .catch((err) => {
