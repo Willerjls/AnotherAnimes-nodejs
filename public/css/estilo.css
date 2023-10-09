@@ -10,9 +10,11 @@ p {
     font-weight: bolder;
 }
 
+
+
+
 /* login */
-.btnlogin,
-.btnadd {
+.btnlogin, .btnadd {
     background-color: #2E2759 !important;
     color: #FFF !important;
     font-weight: bold;
@@ -136,12 +138,12 @@ p {
     background-size: auto;
     width: 100%;
     padding: 113px;
+
 }
 
 .bannersav {
     background-image: url('../img/salve-ep-bg.jpg');
     background-size: auto;
-
     width: 100%;
     height: 161px;
 }
@@ -258,12 +260,13 @@ p {
 
 }
 
+/* RODAPE */
+
 footer {
     background: #2e2759;
     color: #fff;
     height: 166px;
     text-align: center;
-  
     top: 85%;
     width: 100%;
     font-weight: bold;
