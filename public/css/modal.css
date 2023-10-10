@@ -90,8 +90,10 @@
   background-color: transparent;
 }
 
-#body.blur {
-  backdrop-filter: blur(5px);
+#body.blur, #header.blur, #content-home.blur {
+  filter: blur(5px);
+  position: relative;
+  z-index: 0;
 }
 
 /* modal */
