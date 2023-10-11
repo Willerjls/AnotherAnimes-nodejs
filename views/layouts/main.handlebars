@@ -20,14 +20,15 @@
   <title>Home AnotherAnime</title>
 </head>
 
-<body id="body">
+<body>
+
   {{> navbar}}
 
   {{{body}}}
-   {{> footer}}
+
+  {{> footer}}
+
   {{> mgs}}
-
-
 
 
   {{#if error}}
@@ -37,11 +38,11 @@
     {{error}}
 
   </div>
+
   {{else}}
 
   {{/if}}
 
- 
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -3,12 +3,10 @@
   top: 50%;
   font-family: 'Anek Latin', sans-serif;
   font-family: 'Roboto', sans-serif;
-  background: #2E2759 60%;
-  z-index: 1;
+  background: #32266bee;
   width: 500px;
   height: 250px;
   border-radius: 24px;
-  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +31,6 @@
   font-size: 19px;
   color: #000;
   text-decoration: none;
-  z-index: 000000;
   border-style: none;
 }
 
@@ -57,8 +54,9 @@
 .mdh003_textomodalp {
   color: #FFF;
   text-align: center;
-  font-size: 15px;
   margin: 22px 0;
+  font-weight: normal;
+  max-width: 490px;
 }
 
 
@@ -82,18 +80,11 @@
 .mdh003_modal_ds {
   display: flex;
   justify-content: center;
-  z-index: 2;
-  position: relative;
 }
 
-#body{
-  background-color: transparent;
-}
-
-#body.blur, #header.blur, #content-home.blur {
+#content-home.blur, #header.blur, #content-home.blur, #footer.blur{
   filter: blur(5px);
-  position: relative;
-  z-index: 0;
+  
 }
 
 /* modal */
@@ -102,7 +93,6 @@
   transition: 0.5s;
   opacity: 1;
   pointer-events: all;
-
 }
 
 #mdh003_modal.hide {
@@ -114,9 +104,9 @@
   top: 0;
 }
 
-
-
-
+.mdh003_hr{
+  color: #FFF;
+}
 @media screen and (max-width: 800px) {
 
   .mdh003_divsbtns {
