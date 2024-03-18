@@ -1,79 +1,40 @@
 <header id="header">
-  <nav class="menu container">
-    <a class="logo" href="/"><img src="/img/icones/logo.svg" alt="logo" /></a>
-    <ul class="links">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Início</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contato/contato">Contato</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/sobre">Sobre</a>
-      </li>
-{{#if user}}
-      <li class="nav-item">
-        <a class="nav-link" href="/salvo/salvos">Salvos</a>
-      </li>
-      {{else}}
+  <nav>
+    <a class="logo" href="/"><img class="logo_geral" src="/img/logo.png" alt="logo" /></a>
 
-      <li class="nav-item" style="display: none">
-        <a class="nav-link" href="/salvo/salvos">Salvos</a>
-      </li>
+    <div class="menu-link">
+      <ul class="links">
+        <li>
+          <a href="/contato/contato">Contato</a>
+        </li>
+        <li>
+          <a href="/sobre">Sobre</a>
+        </li>
+        {{#if user}}
+        <li>
+          <a href="/salvo/salvos">Salvos</a>
+        </li>
+        {{else}}
 
-{{/if}}
+        <li style="display: none">
+          <a href="/salvo/salvos">Salvos</a>
+        </li>
 
-    </ul>
-    <div class="btns">
-      {{#if user}}
+        {{/if}}
 
-    
+      </ul>
+      <div class="btns_lg">
+        {{#if user}}
 
-     <a
-        style="border-radius: 22px;"
-        type="button"
-        class="btn borda btn-danger"
-        href="/usuario/logout"
-      >Sair</a>
-    {{else}}
+        <a type="button" class="btn btn_login" href="/usuario/logout">Sair</a>
+        {{else}}
 
-      <a
-        style="border-radius: 22px;"
-        type="button"
-        class="btn borda btn-danger"
-        href="/usuario/login"
-      >Entrar</a>
+        <a type="button" class="btn btn_login" href="/usuario/login">Entrar</a>
 
-      <a
-        style="border-radius: 22px;color: #fff;"
-        type="button"
-        class="btn btn-outline-danger text-light"
-        href="/usuario/registro"
-      >Criar conta</a>
+        <a type="button" class="btn btn_criar" href="/usuario/registro">Criar
+          conta</a>
 
-      {{/if}}
-    </div>
-
-    <div class="dropdown">
-      <a
-        class="btn0"
-        href="#"
-        role="button"
-        id="dropdownMenuLink"
-        data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
-      >
-        <img src="/img/icones/menu.svg" alt="menu hamburgue" />
-      </a>
-
-      <div class="dropdown-menu burgue" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="./index.html">Inicio</a>
-        <a class="dropdown-item" href="./contato.html">Contato</a>
-        <a class="dropdown-item" href="./sobre.html">Sobre</a>
-        <a class="dropdown-item" href="./salvos.html">Salvos</a>
-        <a class="dropdown-item" href="./login.html">Entrar</a>
-        <a class="dropdown_item" href="./conta.html">Criar conta</a>
+        {{/if}}
       </div>
     </div>
   </nav>

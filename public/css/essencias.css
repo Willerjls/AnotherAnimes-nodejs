@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+a{
+  text-decoration: none;
+}
+
+header {
+  background-color: #000;
+}
+
+p {
+  font-weight: bolder;
+}
+
+.btn {
+  Display: flex !important;
+  align-items: center!important;
+  justify-content: space-around !important;
+  width: 137px;
+  height: 44px;
+  border-radius: 22px;
+}
