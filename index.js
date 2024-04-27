@@ -84,7 +84,7 @@ mongoose
     console.log("Banco de dados conectado");
   })
   .catch((err) => {
-    console.log("Error ao se conectar ao banco de dados" + err);
+    console.log("Error ao se conectar ao banco de dados " + err);
   });
 
 

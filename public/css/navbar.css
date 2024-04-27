@@ -1,3 +1,5 @@
+/* CSS Navbar e Footer */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -5,7 +7,7 @@ nav {
   height: 150px;
   margin: 0 auto;
   align-items: center;
-  list-style: none;
+
 }
 
 nav ul li a {
@@ -27,10 +29,10 @@ nav ul li a {
   font-weight: bold;
 }
 
-.links {
-  margin: 0 26px 0 0;
-  display: flex;
+.links a {
+  margin: 0 15px 0 0;
 }
+
 
 .btns_lg {
   display: flex;
@@ -48,12 +50,48 @@ nav ul li a {
   border-width: 1px;
 }
 
-.btn_login:hover{
+.btn_login:hover {
   background-color: #FFF;
   color: #3623AD;
 }
 
-.btn_criar:hover{
+.btn_criar:hover {
   background-color: #FFF;
   color: #3623AD;
+}
+
+/* FOOTER */
+
+.content-footer {
+  background: #000;
+  text-align: center;
+  color: #fff;
+
+}
+
+.redes_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 1279px;
+  margin: 0 auto;
+}
+
+.rodape_txt {
+  background-color: #111111;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Css responsive */
+
+@media (max-width: 600px) {
+  nav {
+    
+  
+  }
 }

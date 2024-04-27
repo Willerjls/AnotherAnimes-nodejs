@@ -1,4 +1,4 @@
-/* login */
+login
 .btnlogin, .btnadd {
     background-color: #2E2759 !important;
     color: #FFF !important;
@@ -234,15 +234,7 @@
 
 /* RODAPE */
 
-footer {
-    background: #2e2759;
-    color: #fff;
-    height: 166px;
-    text-align: center;
-    top: 85%;
-    width: 100%;
-    font-weight: bold;
-}
+
 
 /*adcep*/
 

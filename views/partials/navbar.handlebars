@@ -3,26 +3,24 @@
     <a class="logo" href="/"><img class="logo_geral" src="/img/logo.png" alt="logo" /></a>
 
     <div class="menu-link">
-      <ul class="links">
-        <li>
-          <a href="/contato/contato">Contato</a>
-        </li>
-        <li>
-          <a href="/sobre">Sobre</a>
-        </li>
+      <div class="links">
+
+        <a href="/contato/contato">Contato</a>
+
+
+        <a href="/sobre">Sobre</a>
+
         {{#if user}}
-        <li>
-          <a href="/salvo/salvos">Salvos</a>
-        </li>
+
+        <a href="/salvo/salvos">Salvos</a>
+
         {{else}}
 
-        <li style="display: none">
-          <a href="/salvo/salvos">Salvos</a>
-        </li>
+
+        <a href="/salvo/salvos">Salvos</a>
 
         {{/if}}
-
-      </ul>
+      </div>
       <div class="btns_lg">
         {{#if user}}
 
@@ -37,6 +35,10 @@
         {{/if}}
       </div>
     </div>
+
+    
   </nav>
+
+
 
 </header>
