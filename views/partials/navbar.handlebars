@@ -1,44 +1,91 @@
 <header id="header">
-  <nav>
-    <a class="logo" href="/"><img class="logo_geral" src="/img/logo.png" alt="logo" /></a>
+  <div class="menu">
+    <nav>
+      <a class="logo" href="/">
+        <img class="logo_geral" src="/img/logo.png" alt="logo" />
+      </a>
 
-    <div class="menu-link">
-      <div class="links">
+      <div class="menu-link">
+        <div class="links">
+          <a href="/contato/contato">
+            Contato
+          </a>
 
-        <a href="/contato/contato">Contato</a>
+          <a href="/sobre">
+            Sobre
+          </a>
 
+          {{#if user}}
+            <a href="/salvo/salvos">
+              Salvos
+            </a>
+          {{else}}
 
-        <a href="/sobre">Sobre</a>
+          {{/if}}
+        </div>
+        <div class="btns_lg">
+          {{#if user}}
+            <a type="button" class="btn btn_login" href="/usuario/logout">
+              Sair
+            </a>
+          {{else}}
+            <a type="button" class="btn btn_criar" href="/usuario/registro">
+              Criar
+            conta
+            </a>
+
+            <a type="button" class="btn btn_login" href="/usuario/login">
+              Entrar
+            </a>
+          {{/if}}
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="menu_mobile">
+    <div>
+      <nav class="nav_header_mobile">
+        <a class="logo" href="/">
+          <img class="logo_footer" src="/img/logo_footer.png" alt="logo" />
+        </a>
+
+        <div class="btns_lg">
+          {{#if user}}
+            <a type="button" class="btn btn_login" href="/usuario/logout">
+              Sair
+            </a>
+          {{else}}
+            <a type="button" class="btn btn_criar" href="/usuario/registro">
+              Criar
+            conta
+            </a>
+
+            <a type="button" class="btn btn_login" href="/usuario/login">
+              Entrar
+            </a>
+          {{/if}}
+        </div>
+        </div>
+      </nav>
+
+      <nav class="nav_links_mobile">
+        <a href="/contato/contato">
+          Contato
+        </a>
+
+        <a href="/sobre">
+          Sobre
+        </a>
 
         {{#if user}}
-
-        <a href="/salvo/salvos">Salvos</a>
-
+          <a href="/salvo/salvos">
+            Salvos
+          </a>
         {{else}}
 
-
-        <a href="/salvo/salvos">Salvos</a>
-
         {{/if}}
-      </div>
-      <div class="btns_lg">
-        {{#if user}}
-
-        <a type="button" class="btn btn_login" href="/usuario/logout">Sair</a>
-        {{else}}
-
-        <a type="button" class="btn btn_login" href="/usuario/login">Entrar</a>
-
-        <a type="button" class="btn btn_criar" href="/usuario/registro">Criar
-          conta</a>
-
-        {{/if}}
-      </div>
+      </nav>
     </div>
-
-    
-  </nav>
-
-
-
+  </div>
 </header>

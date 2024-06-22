@@ -1,4 +1,58 @@
-.img-home{
-  width: 240px;
-  height: 150px;
+h2,
+p {
+  color: #ffffff;
 }
+.container-home {
+  background-color: #000;
+  text-align: center;
+}
+
+button {
+  background: none;
+  border: none;
+}
+.login_2{
+  font-size: 20px;
+  margin: -57px 0 66px 0;
+}
+.login_2 a{
+  text-decoration: underline;
+}
+
+.login_2 a:hover{
+  color: #3623AD;
+  font-weight: bold;
+}
+.titulo_home {
+  padding: 93px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.card_home {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 180px;
+}
+
+.img_card_home {
+  width: 393px;
+}
+
+.card_home p{
+  padding: 17px;
+}
+
+.card_icons {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_icons div {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+

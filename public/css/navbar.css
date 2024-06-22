@@ -1,13 +1,26 @@
 /* CSS Navbar e Footer */
+header {
+  background-color: #000;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+
+}
+
+.menu_mobile {
+  display: none;
+}
 
 nav {
   display: flex;
   justify-content: space-between;
-  width: 1279px;
   height: 150px;
   margin: 0 auto;
   align-items: center;
-
+  width: 1279px;
 }
 
 nav ul li a {
@@ -25,8 +38,8 @@ nav ul li a {
 }
 
 .menu-link a {
-  color: #fff;
   font-weight: bold;
+  margin: 8px;
 }
 
 .links a {
@@ -74,7 +87,7 @@ nav ul li a {
   justify-content: space-between;
   align-items: center;
   height: 120px;
-  width: 1279px;
+
   margin: 0 auto;
 }
 
@@ -90,8 +103,39 @@ nav ul li a {
 /* Css responsive */
 
 @media (max-width: 600px) {
-  nav {
-    
-  
+  .menu {
+    display: none;
   }
+
+  .menu_mobile {
+    display: block;
+
+  }
+
+  .menu_mobile a {
+    margin: 0 0 0 8px;
+  }
+
+  .nav_header_mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .nav_header_mobile a {
+    width: 103px;
+    height: 40px;
+  }
+
+  .nav_links_mobile{
+    background-color: #111111;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+
 }

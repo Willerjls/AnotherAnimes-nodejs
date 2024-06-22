@@ -1,24 +1,57 @@
 <div class="container-home">
-
-  <div>
-    <h3>Acompanhe os animes que você adora</h3>
-  </div>
   <div>
     <div>
-      <img class="img-home" src="/img/imagens/home.jpg">
-    </div>
+      <p class="titulo_home">
+        Acompanhe os animes
+        <br />
+        que você adora
+      </p>
+      <br>
 
-    <div>
-      <div>
-        <img src="" alt="">
-        <p>Nunca perca onde parou</p>
-      </div>
-      <div>
-        <img src="" alt="">
-        <p>Adicione seu favoritos</p>
-      </div>
-      
+      <p class="login_2">Para salvar seus episodios <a href="/usuario/registro">crie uma conta</a> ou <a
+          href="/usuario/login">entre agora</a>. </p>
+      <button id="scroll_btn">
+        <img src="/img/icones/seta_pra_baixo.png" alt="icone seta para baixo" />
+      </button>
     </div>
   </div>
 
+  <div class="card_home">
+    <div>
+      <img class="img_card_home" src="/img/imagens/home_banner.png" alt="banner home" />
+    </div>
+
+
+    <div class="card_icons">
+      <div>
+        <img src="/img/icones/salvar_eps_home.png" alt="icone de salvar episodios" />
+        <p>
+          Nunca perca um episódio
+        </p>
+      </div>
+
+
+      <div><img src="/img/icones/favorito.png" alt="icone de favoritar" />
+        <p>
+          Descubra novos favoritos
+        </p>
+      </div>
+
+
+      <div><img src="/img/icones/compartilhar.png" alt="icone de compartilhar opnião" />
+        <p>
+          Compartilhe sua opinião
+        </p>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+<script>
+  // Adicionando um evento de clique ao botão
+  document.getElementById("scroll_btn").addEventListener("click", function () {
+    // Role a página para o final
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+</script>
