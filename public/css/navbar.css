@@ -18,7 +18,6 @@ nav {
   display: flex;
   justify-content: space-between;
   height: 150px;
-  margin: 0 auto;
   align-items: center;
   width: 1279px;
 }
@@ -86,6 +85,7 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1279px;
   height: 120px;
 
   margin: 0 auto;
@@ -102,7 +102,17 @@ nav ul li a {
 
 /* Css responsive */
 
-@media (max-width: 600px) {
+@media (max-width: 1299px) {
+
+  nav,
+  .redes_div {
+    width: 800px;
+  }
+
+
+}
+
+@media (max-width: 800px) {
   .menu {
     display: none;
   }
@@ -128,7 +138,7 @@ nav ul li a {
     height: 40px;
   }
 
-  .nav_links_mobile{
+  .nav_links_mobile {
     background-color: #111111;
     width: 100%;
     height: 120px;
@@ -136,6 +146,9 @@ nav ul li a {
     justify-content: space-between;
   }
 
-
+  .card_home {
+    margin: 91px 0 0 0;
+    padding: 0;
+  }
 
 }
