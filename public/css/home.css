@@ -2,6 +2,7 @@ h2,
 p {
   color: #ffffff;
 }
+
 .container-home {
   background-color: #000;
   text-align: center;
@@ -11,18 +12,21 @@ button {
   background: none;
   border: none;
 }
-.login_2{
+
+.login_2 {
   font-size: 20px;
   margin: -57px 0 66px 0;
 }
-.login_2 a{
+
+.login_2 a {
   text-decoration: underline;
 }
 
-.login_2 a:hover{
+.login_2 a:hover {
   color: #3623AD;
   font-weight: bold;
 }
+
 .titulo_home {
   padding: 93px;
   color: #ffffff;
@@ -41,7 +45,7 @@ button {
   width: 393px;
 }
 
-.card_home p{
+.card_home p {
   padding: 17px;
 }
 
@@ -56,3 +60,22 @@ button {
   padding: 12px;
 }
 
+
+@media (max-width: 800px) {
+  .login_2 {
+    margin: -57px 50px 66px 40px;
+  }
+
+  .card_home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    margin: 60px 0 0 0;
+
+  }
+
+  .img_card_home {
+    width: 340px;
+  }
+}
