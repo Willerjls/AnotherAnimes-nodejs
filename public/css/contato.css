@@ -1,0 +1,82 @@
+.container_contato{
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 450px;
+}
+
+
+
+
+
+
+
+.portlet-decorate .portlet-content{
+  background-color: #663399 !important;
+}
+#lp-cbr-terms{
+  background-color: #663399 !important;
+}
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_7d4nYK4aWVX9_ .faq-list{
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_QlQSn5E7gJDx_ .portlet-content {
+  background-color: #fff !important;
+  border-width: 0px 1px 1px 1px !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_H6hxtAidJPFH_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_zN02aU3FRX2o_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_43horp6F0X2F_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_bK5u0p0qB6IK_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_uMFQNHF1sW23_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_OoxjhTeWY5Fw_ .portlet-content {
+  background-color: #fff !important;
+}
+
+#p_p_id_com_liferay_journal_content_web_portlet_JournalContentPortlet_INSTANCE_WhZNYKyEIdOL_ .portlet-content {
+  background-color: #fff !important;
+}
+
+/* tj */
+
+#lp-cbr-back-to-top-content{
+  background-color: #fff !important;
+
+}
+
+
+@media (max-width: 768px) {
+
+  .canta-tarja {
+    margin-bottom: 0 !important;
+  }
+  .faq-model-cc .faq-wrapper{
+    margin-bottom: 0 !important;
+  }
+  .mesp001_carousel_of_promotions{
+    margin: 50px 0 0 0 !important;
+  }
+  .mesp003_universe_of_traveller .mesp003_universe_of_traveller_container{
+    margin: 20px 20px 0 20px !important;
+  }
+  .mesp003_universe_of_traveller{
+    margin: 50px 0 0 0 !important;
+  }
+}

@@ -29,6 +29,10 @@ nav ul li a {
   padding: 16px;
 }
 
+.logo {
+  margin-left: 20px;
+}
+
 .menu-link {
   display: flex;
   flex-direction: row;
@@ -38,7 +42,6 @@ nav ul li a {
 
 .menu-link a {
   font-weight: bold;
-  margin: 8px;
 }
 
 .links a {
@@ -52,7 +55,7 @@ nav ul li a {
 
 .btn_login {
   background-color: #3623AD;
-  margin-right: 12px;
+  margin: 0 20px 0 15px;
   text-decoration: none;
 }
 
