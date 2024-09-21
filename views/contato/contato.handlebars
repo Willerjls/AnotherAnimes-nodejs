@@ -1,76 +1,21 @@
 <div class="container_contato">
-  <div class="formcont">
-    <h2>
-      <strong>
-        Está com problemas ou quer enviar uma opnião.
-      </strong>
-    </h2>
-    <form action="/contato/contato/add" method="POST">
-      <div class="form-group">
-        <input type="text" class="form-control" id placeholder="Nome:" name="nome" />
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Email:" name="email" />
-      </div>
-      <div class="form-group">
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-          placeholder="Escreva aqui sua mensagem:" name="mensagem"></textarea>
-      </div>
-      <button style="border-radius: 22px;" type="submit" class="btn btncont borda">
-        Enviar
-      </button>
-    </form>
-  </div>
-</div>
+  <form action="/contato/contato/add" method="POST">
 
-<a href=""></a>
-<p>
-<ul>
-  <li>Milhas com validade de 10 anos</li>
-</ul>
-<ul>
-  <li>Acumule ainda mais milhas bônus em toda a plataforma Smiles: nas transações e transferências de pontos do cartão
-    de crédito, ao quitar uma passagem no Viaje Fácil, ao comprar milhas, ao realizar transferência de milhas entre
-    contas Smiles e na reativação de milhas expiradas. Em promoções que ofereçam milhas bônus, clientes assinantes do
-    Clube Smiles sempre ganharão mais milhas bônus</li>
-</ul>
-<ul>
-  <li>Descontos e promoções exclusivas para assinantes do Clube Smiles</li>
-</ul>
-<ul>
-  <li>5 reservas gratuitas de passagens com congelamento dos preços</li>
-</ul>
-<ul>
-  <li>Uma página exclusiva com passagens selecionadas e preços de outlet</li>
-</ul>
-<ul>
-  <li>Conta família com até 6 pessoas. Junte milhas com familiares e amigos em uma única conta</li>
-</ul>
-<ul>
-  <li>Assine o Clube Smiles com o Cartão GOL Smiles, ganhe Milhasback no momento da assinatura e mais 10%, todos os
-    meses, junto às milhas do seu plano</li>
-</ul>
-<ul>
-  <li>Milhas qualificáveis equivalentes a 10% do plano assinado, ou seja, a cada 10 milhas acumuladas do Clube, você
-    recebe 1 milha qualificável</li>
-</ul>
-<ul>
-  <li>Milhas em dobro ao fazer sua reserva com a Viaje Fácil. Conheça mais sobre a nossa parceira Viaje Fácil aqui.
-    (link para página da parceria)</li>
-</ul>
-<ul>
-  <li>Um código de indicação para compartilhar com quem você quiser. Quando a pessoa concluir a assinatura, você e seu
-    indicado ganham bônus em milhas</li>
-</ul>
-<ul>
-  <li>Bônus VIP a cada 6 meses de assinatura do Clube Smiles para você transferir os pontos do seu cartão com uma
-    bonificação de acordo com seu plano assinado</li>
-</ul>
-<ul>
-  <li>Milhas turbinadas ao usar o cartão de crédito Gol Smiles</li>
-</ul>
-<ul>
-  <li>Ao assinar o plano 20.000 você conquista automaticamente a categoria Diamante do programa Smiles e tem acesso a
-    muito mais benefícios de viagem com a GOL e nossas companhias aéreas parceiras</li>
-</ul>
-</p>
+    <legend>Está com problemas ou quer enviar um opnião?</legend>
+    <br>
+
+    <label for="nome">Digite seu nome:</label><br>
+    <input type="text" name="nome" placeholder="Nome:" required>
+    <br><br>
+    <label for="email">Digite um email:</label><br>
+    <input type="email" name="email" placeholder="Email" required>
+    <br><br>
+    <label for="mensagem">Digite sua mensagem ou opnião</label><br>
+    <textarea name="mensagem" rows="6" required></textarea>
+
+    <div class="btn_contato_div">
+      <button class="btn btn_login btn_contato" type="submit">Enviar mensagem!</button>
+    </div>
+
+  </form>
+</div>
