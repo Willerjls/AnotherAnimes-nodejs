@@ -1,0 +1,17 @@
+.container_sobre{
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container_sobre > div{
+  max-width: 534px;
+  max-height: 700px;
+}
+
+.container_sobre > div > div >  p{
+  text-align: justify;
+}
