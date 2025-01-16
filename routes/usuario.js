@@ -79,7 +79,7 @@ router.post("/registro", (req, res) => {
                 .save()
                 .then(() => {
                   req.flash("success_mgs", "Usuario criado com sucesso !");
-                  res.redirect("/");
+                  res.redirect("/usuario/login");
                 })
                 .catch((err) => {
                   req.flash(

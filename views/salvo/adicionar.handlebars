@@ -1,68 +1,96 @@
-<main class="container adccont">
-  <form class="adicionar" action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
-    <h2>ADICIONE AQUI SEUS EPISÓDIOS ASSISTIDOS</h2>
+{{!-- <div class="adcimg">
+  <label class="labelInput">Adicione a imagem
+    <input id="inputFile" type="file" name="imagem" class="btn file_customizada" />
+    <div id="imagePreview"></div>
+  </label>
+  <!--- <input type="file">--->
+</div>
+<div class="enter">
+  <input class="inputtitle" type="text" name="usuario" placeholder="Titulo" value="{{user._id}}">
+  <div class="inputs">
+    <input class="inputtitle" type="text" name="titulo" placeholder="Titulo">
+  </div>
+  <div class="tmp">
+    <input class="temp" type="text" name="temporada" placeholder="Temporada">
+    <input class="ep" type="number" name="episodio" placeholder="Episódio">
+  </div>
+</div>
+<div class="teste">
+  <button style="border-radius: 22px;" type="submit" class="btn borda">Salvar</button>
+</div>
+</form>
+</main> --}}
 
-    {{#each erros}}
-    <div class="alert alert-danger">
-      {{texto}}
+{{!-- No visual --}}
+
+{{#each erros}}
+<div class="alert alert-danger">
+  {{texto}}
+</div>
+{{else}}
+
+{{/each}}
+<div class="container_cadastro_eps">
+
+  <form action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
+
+    <input type="tst" name="usuario" placeholder="Titulo" value="{{user._id}}">
+    <br><br>
+    <label for="nome">Digite o titulo:</label><br>
+    <input type="text" name="titulo" placeholder="Titulo:" required>
+    <br><br>
+    <div class="temp_ep">
+      <label for="temporada">Digite a temporada:</label>
+      <input type="number" name="email" placeholder="Temporada">
+      <label for="episodio">Digite o episódio:</label>
+      <input type="number" name="episodio" placeholder="Episódio">
     </div>
-    {{else}}
-
-    {{/each}}
-
-
-
-
-    <div class="adcimg">
-      <label class="labelInput">Adicione a imagem
-        <input id="inputFile" type="file" name="imagem" class="btn file_customizada" />
-        <div id="imagePreview"></div>
-      </label>
-      <!--- <input type="file">--->
+    <br><br>
+    <hr>
+    <br><br>
+    <div class="upload_img_div">
+      <label class="label_text_upload" for="">Adicionar imagem</label>
+      <label for="inputFile" class="upload_img">Selecionar imagem</label><br>
+      <input id="inputFile" type="file" name="imagem" />
     </div>
-    <div class="enter">
-      <input class="inputtitle" type="text" name="usuario" placeholder="Titulo" value="{{user._id}}">
-      <div class="inputs">
-        <input class="inputtitle" type="text" name="titulo" placeholder="Titulo">
-      </div>
-      <div class="tmp">
-        <input class="temp" type="text" name="temporada" placeholder="Temporada">
-        <input class="ep" type="number" name="episodio" placeholder="Episódio">
-      </div>
+    <div id="imagePreview"></div>
+    <br>
+
+    <div class="btn_cadastrar_eps_div">
+      <button class="btn btn_login btn_cadastro_ep" type="submit">Salvar</button>
     </div>
-    <div class="teste">
-      <button style="border-radius: 22px;" type="submit" class="btn borda">Salvar</button>
-    </div>
+
   </form>
-</main>
+</div>
 
 
 <script>
-const inputFile = document.getElementById('inputFile');
-const imagePreview = document.getElementById('imagePreview');
+  const inputFile = document.getElementById('inputFile');
+  const imagePreview = document.getElementById('imagePreview');
 
-inputFile.addEventListener('change', function () {
-  const file = inputFile.files[0];
-  if (file) {
-    const reader = new FileReader();
+  inputFile.addEventListener('change', function () {
+    const file = inputFile.files[0];
+    if (file) {
+      const reader = new FileReader();
 
-    reader.onload = function (e) {
-      const img = document.createElement('img');
-      img.src = e.target.result;
-      img.style.maxWidth = '100%';
-      img.style.maxHeight = '200px'; // Defina a altura máxima desejada
+      reader.onload = function (e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.maxWidth = '100%';
+        img.style.maxHeight = '300px';
+        // Defina a altura máxima desejada
 
-      // Limpe o conteúdo anterior da visualização
+        // Limpe o conteúdo anterior da visualização
+        imagePreview.innerHTML = '';
+
+        // Adicione a imagem à visualização
+        imagePreview.appendChild(img);
+      };
+
+      reader.readAsDataURL(file);
+    } else {
+      // Limpe a visualização se nenhum arquivo for selecionado
       imagePreview.innerHTML = '';
-
-      // Adicione a imagem à visualização
-      imagePreview.appendChild(img);
-    };
-
-    reader.readAsDataURL(file);
-  } else {
-    // Limpe a visualização se nenhum arquivo for selecionado
-    imagePreview.innerHTML = '';
-  }
-});
+    }
+  });
 </script>
