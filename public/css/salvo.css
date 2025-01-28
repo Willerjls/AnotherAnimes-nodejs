@@ -11,8 +11,8 @@ legend {
   text-align: center;
 }
 
-input {
-  width: 600px;
+.container_cadastro_eps >form > input {
+  width: 450px;
   height: 45px;
   border: none;
   border-radius: 20px;
@@ -84,6 +84,69 @@ input[type="tst"]{
   border-radius: 25px;
   margin: 0;
 }
+
+/* Exibição dos cards salvos */
+
+.container_salvos{
+  background-color: #000
+}
+
+.card_salvo{
+  width: 320px;
+  height: 450px;
+  border-radius: 25px;
+  border: 1px solid #fff;
+  border-top: none;
+}
+
+.card_img img{
+  width: 320px;
+  height: 200px;
+  border-radius: 25px 25px 0 0;
+}
+
+.card_conteudo{
+  font-size: 16px;
+  line-height: 2.5;
+  margin: 0 0 0 16px;
+}
+
+.btn_edit_salvo{
+  background-color: #3623ad;
+  color: #fff;
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.btn_delete_salvo{
+  background-color: #a11f1f;
+  color: #fff;
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 16px;
+}
+
+.btn_delete_salvo:hover{
+  background-color: #ff0000;
+  cursor: pointer;
+}
+.btn_edit_salvo:hover{
+  background-color: #4d3b9f;
+  cursor: pointer;
+}
+
+.btn_edits{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px auto;
+}
+
+.btn_edits button{
+  font-size: 16px;
+}
+
 
 @media(max-width: 500px) {
   .btn_cadastrar_eps_div>form {

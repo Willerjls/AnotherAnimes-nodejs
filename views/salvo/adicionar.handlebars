@@ -33,25 +33,27 @@
 <div class="container_cadastro_eps">
 
   <form action="/salvo/adicionar/add" method="POST" enctype="multipart/form-data">
-
+    <legend>Salve seus animes favoritos:</legend>
     <input type="tst" name="usuario" placeholder="Titulo" value="{{user._id}}">
     <br><br>
-    <label for="nome">Digite o titulo:</label><br>
-    <input type="text" name="titulo" placeholder="Titulo:" required>
+    <label for="titulo">Título:</label><br>
+    <input type="text" name="titulo" placeholder="Título:" required>
     <br><br>
     <div class="temp_ep">
-      <label for="temporada">Digite a temporada:</label>
-      <input type="number" name="email" placeholder="Temporada">
-      <label for="episodio">Digite o episódio:</label>
+      <label for="temporada">Temporada:</label>
+      <input type="text" name="temporada" placeholder="Temporada">
+      <br><br>
+      <label for="episodio">Episódio:</label>
       <input type="number" name="episodio" placeholder="Episódio">
+
     </div>
-    <br><br>
-    <hr>
+
+
     <br><br>
     <div class="upload_img_div">
       <label class="label_text_upload" for="">Adicionar imagem</label>
       <label for="inputFile" class="upload_img">Selecionar imagem</label><br>
-      <input id="inputFile" type="file" name="imagem" />
+      <input id="inputFile" type="file" name="imagem" required/>
     </div>
     <div id="imagePreview"></div>
     <br>
@@ -65,8 +67,12 @@
 
 
 <script>
+
+
+
   const inputFile = document.getElementById('inputFile');
   const imagePreview = document.getElementById('imagePreview');
+
 
   inputFile.addEventListener('change', function () {
     const file = inputFile.files[0];
@@ -93,4 +99,7 @@
       imagePreview.innerHTML = '';
     }
   });
+
+
+  
 </script>

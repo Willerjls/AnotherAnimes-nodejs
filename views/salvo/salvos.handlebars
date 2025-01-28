@@ -1,56 +1,46 @@
+<div class="container_salvos">
 
+  {{!-- {{#each user}}
 
-{{#each user}}
+  <p><strong>{{nome}}</strong></p>
 
-
-<p><strong>{{nome}}</strong></p>
-
-
-{{else}}
-<option value="0">Nenhuma user</option>
-{{/each}}
+  {{else}}
+  <option value="0">Nenhuma user</option>
+  {{/each}} --}}
 
 
   {{#each salvos}}
-    <div class="card" >
+  <div class="card_salvo">
 
-      <p>usuario - {{usuario}}</p>
-      <div class="card-body">
-        <img style="max-width: 250px;" src="{{imagem}}" />
-        <h5 class="card-title text-center titulo">Titulo - {{titulo}} </h5>
-        <div class="">
-          <p class="card-text">Temporada - {{temporada}}</p>
-          <p class="card-text">Episódio - {{episodio}} </p>
-        </div>
+    {{!-- <p>usuario - {{usuario}}</p> --}}
+    <div class="card_body">
+      <div class="card_img">
+        <img src="{{imagem}}" />
+      </div>
+      <div class="card_conteudo">
+        <p><strong>Título</strong> - {{titulo}} </p>
+        <p><strong>Temporada</strong> - {{temporada}}</p>
+        <p><strong>Episódio</strong> - {{episodio}} </p>
 
-        <div class="edits">
-          <a href="/salvo/salvos/edit/{{_id}}"><button
-              class="btn btn-outline-success"
-              type="submit"
-            >Editar</button>
-          </a>
-          <form action="/salvo/salvos/deletar" method="POST">
-            <input type="hidden" name="id" value="{{_id}}" />
-            <button
-              class="btn btn-outline-danger"
-              type="submit"
-            >Excluir</button>
-          </form>
-        </div>
+      </div>
+
+      <div class="btn_edits">
+        <a href="/salvo/salvos/edit/{{_id}}"><button class="btn_edit_salvo" type="submit">Editar</button>
+        </a>
+        <form action="/salvo/salvos/deletar" method="POST">
+          <input type="hidden" name="id" value="{{_id}}" />
+          <button class="btn_delete_salvo" type="submit">Excluir</button>
+        </form>
       </div>
     </div>
+  </div>
 
   {{else}}
-    <p class="alinhabtn">Nenhum item salvo</p>
-     <div class="alinhabtn">
-  <button type="button" class="btn btnadd">
-    <a href="/salvo/adicionar">adicionar novo</a></button>
-</div>
+  <p class="alinhabtn">Nenhum item salvo</p>
+  <div class="alinhabtn">
+    <button type="button" class="btn btnadd">
+      <a href="/salvo/adicionar">adicionar novo</a></button>
+  </div>
   {{/each}}
 
-
-
-
-
- 
-
+</div>

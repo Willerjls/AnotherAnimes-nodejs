@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-require("../models/Salvo");
+require("../models/Manga");
 require("../models/Usuario");
-const Salvo = mongoose.model("Salvo");
+const Salvo = mongoose.model("Manga");
 const Usuario = mongoose.model("Usuario");
 const { logado } = require("../helpers/logado");
 const router = express.Router();
