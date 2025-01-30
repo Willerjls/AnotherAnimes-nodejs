@@ -1,5 +1,4 @@
 <div class="container_salvos">
-
   {{!-- {{#each user}}
 
   <p><strong>{{nome}}</strong></p>
@@ -7,11 +6,10 @@
   {{else}}
   <option value="0">Nenhuma user</option>
   {{/each}} --}}
-
-
+  <h1>Veja seus animes salvos</h1>
   {{#each salvos}}
-  <div class="card_salvo">
 
+  <div class="card_salvo">
     {{!-- <p>usuario - {{usuario}}</p> --}}
     <div class="card_body">
       <div class="card_img">
@@ -35,12 +33,21 @@
     </div>
   </div>
 
+  <div class="btn_add_flutuante">
+
+    <a href="/salvo/adicionar"><button type="button" class="btn btnadd"></button></a>
+
+  </div>
+
   {{else}}
-  <p class="alinhabtn">Nenhum item salvo</p>
+<div class="txt_sem_itens">
+    <p class="txt_add">Nenhum item salvo, que tal adicionar?</p>
   <div class="alinhabtn">
-    <button type="button" class="btn btnadd">
+    <button type="button" class="btn btn_add_novo">
       <a href="/salvo/adicionar">adicionar novo</a></button>
   </div>
+</div>
   {{/each}}
+
 
 </div>

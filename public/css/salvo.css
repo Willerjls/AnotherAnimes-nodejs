@@ -11,7 +11,7 @@ legend {
   text-align: center;
 }
 
-.container_cadastro_eps >form > input {
+.container_cadastro_eps>form>input {
   width: 450px;
   height: 45px;
   border: none;
@@ -27,8 +27,21 @@ input[type="number"] {
 input[type="file"] {
   display: none;
 }
-input[type="tst"]{
+
+input[type="tst"] {
   display: none;
+}
+
+h1 {
+  text-align: center;
+  margin: 25px 0 19px 0;
+  font-size: 30px;
+}
+
+.container_salvos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .container_cadastro_eps {
@@ -39,21 +52,47 @@ input[type="tst"]{
   align-items: center;
   height: 600px;
 }
-.temp_ep{
+
+.temp_ep {
   display: flex;
   align-items: center;
 }
 
-.temp_ep>input{
+.temp_ep>input {
   width: 100px;
   margin-left: 10px;
 }
+
 .upload_img_div {
   display: flex;
   align-items: center;
 }
-.btn_cadastrar_eps_div{
+
+.btn_cadastrar_eps_div {
   margin: 35px auto;
+}
+
+.btn_add_novo {
+  background-color: #3623AD;
+  margin: 0 20px 0 15px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.txt_sem_itens {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.txt_add {
+  color: #000;
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 10px auto;
+
 }
 
 .upload_img {
@@ -69,7 +108,7 @@ input[type="tst"]{
   justify-content: center;
 }
 
-.label_text_upload{
+.label_text_upload {
   font-size: 18px;
 }
 
@@ -87,31 +126,33 @@ input[type="tst"]{
 
 /* Exibição dos cards salvos */
 
-.container_salvos{
-  background-color: #000
-}
 
-.card_salvo{
+.card_salvo {
   width: 320px;
   height: 450px;
+  margin: 95px 0 57px 0;
   border-radius: 25px;
-  border: 1px solid #fff;
+  border: 1px solid #3623ad;
   border-top: none;
 }
 
-.card_img img{
+.card_conteudo p {
+  color: #000;
+}
+
+.card_img img {
   width: 320px;
   height: 200px;
   border-radius: 25px 25px 0 0;
 }
 
-.card_conteudo{
+.card_conteudo {
   font-size: 16px;
   line-height: 2.5;
   margin: 0 0 0 16px;
 }
 
-.btn_edit_salvo{
+.btn_edit_salvo {
   background-color: #3623ad;
   color: #fff;
   width: 120px;
@@ -119,7 +160,7 @@ input[type="tst"]{
   border-radius: 25px;
 }
 
-.btn_delete_salvo{
+.btn_delete_salvo {
   background-color: #a11f1f;
   color: #fff;
   width: 120px;
@@ -128,25 +169,48 @@ input[type="tst"]{
   font-size: 16px;
 }
 
-.btn_delete_salvo:hover{
+.btn_delete_salvo:hover {
   background-color: #ff0000;
   cursor: pointer;
 }
-.btn_edit_salvo:hover{
+
+.btn_edit_salvo:hover {
   background-color: #4d3b9f;
   cursor: pointer;
 }
 
-.btn_edits{
+.btn_edits {
   display: flex;
   justify-content: space-evenly;
   margin: 20px auto;
 }
 
-.btn_edits button{
+.btn_edits button {
   font-size: 16px;
 }
 
+.btnadd {
+  background-image: url('/img/icones/mais.png');
+  background-repeat: no-repeat;
+  background-color: #3623ad;
+  background-position: center;
+  background-size: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.btn_add_flutuante {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  text-align: center;
+
+}
 
 @media(max-width: 500px) {
   .btn_cadastrar_eps_div>form {
