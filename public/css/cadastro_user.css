@@ -1,59 +1,117 @@
+*{
+  box-sizing: border-box;
+}
+
 .container_cadastro{
-  background-color: #000;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
-  height: 600px;
-}
-label{
-  color: #fff;
-  font-size: 15px;
-  margin: 0 0 0 10px;
+  min-height: 100vh;
+  background: url('../img/imagens/img.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-legend{
-  font-size: 35px;
-  font-weight: bold;
+.container_cadastro > .card_cadastro{
+  width: 420px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .2);
   color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.container_cadastro > .card_cadastro > h1{
+  font-size: 36px;
   text-align: center;
 }
 
-input{
-  width: 450px;
-  height: 45px;
-  border: none;
-  border-radius: 20px;
-  margin: 10px auto;
-}
-input[type="text"], input[type="email"], input[type="password"]{
-  padding-left: 20px;
-}
-
-
-.btn_cadastrar_user_div{
-  margin: 16px auto;
-}
-.btn_cadastro_user{
-  font-weight: bold;
-  cursor: pointer;
-  text-align: center;
-  float: inline-end;
-  width: 200px;
+.container_cadastro > .card_cadastro > form > .input-box_cadastro{
+  position: relative;
+  width: 100%;
   height: 50px;
-  font-size: 15px;
-  border-radius: 25px;
+  margin: 30px 0;
+}
+
+.container_cadastro > .card_cadastro > form > .input-box_cadastro > input{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
   margin: 0;
 }
 
-@media(max-width: 500px) {
-  .btn_cadastro_user > form {
-    margin: 70px 0 0 0;
-    
-  }
-  input, textarea, legend{
-    width: 440px;
-  }
+.container_cadastro > .card_cadastro > form > .input-box_cadastro > input::placeholder{
+  color: #fff;
 }
 
+.container_cadastro > .card_cadastro > form > .input-box_cadastro > i{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
 
+.container_cadastro > .card_cadastro > form > .Remember_forgot_cadastro{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
+}
+
+.container_cadastro > .card_cadastro > form > .Remember_forgot_cadastro > label > input{
+  accent-color: #fff;
+  width: 11px;
+  height: 11px;
+  border-radius: 0;
+  margin: 5px;
+}
+
+.container_cadastro > .card_cadastro > form > .Remember_forgot_cadastro > a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.container_cadastro > .card_cadastro > form > .Remember_forgot_cadastro > a:hover{
+  text-decoration: underline;
+}
+
+.container_cadastro > .card_cadastro > form > .btn_cadastro{
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.container_cadastro > .card_cadastro > form > .register-link_cadastro{
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.container_cadastro > .card_cadastro > form > .register-link_cadastro > p > a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container_cadastro > .card_cadastro > form > .register-link_cadastro > p > a:hover{
+  text-decoration: underline;
+}
