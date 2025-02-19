@@ -40,15 +40,15 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .img_card_home {
-  width: 483px;
+  width: 560px;
 }
 
 .card_home p {
-  padding: 17px;
+  padding: 13px;
+  font-size: 16px;
 }
 
 .card_icons {
@@ -60,9 +60,16 @@ button {
 .card_icons div {
   display: flex;
   align-items: center;
-  padding: 12px;
+  padding: 20px;
 }
 
+.icons_bg {
+  background-color: #3623AD;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 26px;
+  padding: 13px;
+}
 
 @media (max-width: 800px) {
   .login_2 {
