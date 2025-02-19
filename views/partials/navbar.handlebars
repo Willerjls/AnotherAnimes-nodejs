@@ -28,14 +28,15 @@
               Sair
             </a>
           {{else}}
-            <a type="button" class="btn btn_criar" href="/usuario/registro">
-              Criar
-            conta
-            </a>
-
-            <a type="button" class="btn btn_login" href="/usuario/login">
-              Entrar
-            </a>
+            <div class="user_navbar" onclick="escondeDropdown()">
+              <span>
+                <i class='bx bxs-user' style='color:#3623ad; font-size: 20px'></i>
+              </span>
+              <div class="dropdown_navbar">
+                <a type="button" class="btn btn_login" href="/usuario/login">Entrar</a>
+                <a type="button" class="btn btn_criar" href="/usuario/registro">Criar conta</a>
+              </div>
+            </div>
           {{/if}}
         </div>
       </div>
