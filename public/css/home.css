@@ -38,13 +38,13 @@ button {
 
 .card_home {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  padding: 180px;
+
 }
 
 .img_card_home {
-  width: 393px;
+  width: 483px;
 }
 
 .card_home p {
@@ -54,6 +54,7 @@ button {
 .card_icons {
   display: flex;
   flex-direction: column;
+  margin: 0 0 0 84px;
 }
 
 .card_icons div {
