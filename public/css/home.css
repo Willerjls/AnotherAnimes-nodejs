@@ -91,22 +91,22 @@ button {
 
 .card_icons_1 {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
 }
 
-.card_icons_1 div {
+.card_icons_1 > .content_card_icons, .bg_card{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 273px;
-  margin: 0 94px;
   background: #A0C0F3;
   background: url('/img/cards_home/card_1.jpg') no-repeat center;
   border-radius: 20px;
 color: #FFF;
 }
+
 .bg_card{
   filter: brightness(0.8) drop-shadow(2px 4px 6px black);
 }
@@ -135,7 +135,6 @@ color: #FFF;
   border-radius: 50px;
   padding: 15px;
   font-size: 26px;
-  width: 26px !important;
   margin: 35px 0 42px 0;
 }
 
