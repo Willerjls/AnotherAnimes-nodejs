@@ -1,41 +1,43 @@
 <header id="header">
   <div class="menu">
     <nav>
-      <a class="logo" href="/">
-        <img class="logo_geral" src="/img/logo.png" alt="logo" />
-      </a>
       <div class="menu-link">
+        <a class="logo" href="/">
+          <img class="logo_geral" src="/img/logo.png" alt="logo" />
+        </a>
         <div class="links">
-          <a href="/contato/contato">
-            Contato
-          </a>
-
-          <a href="/sobre">
-            Sobre
-          </a>
-
+          <a href="/contato/contato">Contato</a>
+          <a href="/sobre">Sobre</a>
+          
           {{#if user}}
+<<<<<<< HEAD
             <a href="/salvo/salvos">
               Salvos
             </a>
       
+=======
+            <a href="/salvo/salvos">Salvos</a>
+          {{else}}
+>>>>>>> main
 
           {{/if}}
         </div>
+      </div>
+
+      <div class="menu-link">
         <div class="btns_lg">
           {{#if user}}
-            <a type="button" class="btn btn_login" href="/usuario/logout">
-              Sair
-            </a>
+            <a type="button" class="btn btn_login" href="/usuario/logout">Sair</a>
           {{else}}
-            <a type="button" class="btn btn_criar" href="/usuario/registro">
-              Criar
-            conta
-            </a>
-
-            <a type="button" class="btn btn_login" href="/usuario/login">
-              Entrar
-            </a>
+            <div class="user_navbar" onclick="escondeDropdown(event)">
+              <span>
+                <i class='bx bxs-user' style='color:#3623ad; font-size: 20px'></i>
+              </span>
+              <div class="dropdown_navbar">
+                <a type="button" class="btn btn_login" href="/usuario/login">Entrar</a>
+                <a type="button" class="btn btn_criar" href="/usuario/registro">Criar conta</a>
+              </div>
+            </div>
           {{/if}}
         </div>
       </div>
